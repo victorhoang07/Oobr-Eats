@@ -1,11 +1,12 @@
 import React from "react"
-
+import NavBarContainer from "../nav/navbar";
+import { Link } from "react-router-dom";
 
 const SplashPage = () => {
 
     return (
         <div className="splash-page">
-            
+            <NavBarContainer />
             <div className="splash-text">Order food to your door</div>
 
             <label className="switch">
@@ -19,7 +20,7 @@ const SplashPage = () => {
             </div>
 
             <div className="signin-text-container">
-            <a className="signin-text" href=""> Sign in </a> <span>for more options</span>
+            <Link to='/login'>Sign in</Link> <span>for more options</span>
             </div>
 
             <div className="splash-img-box">

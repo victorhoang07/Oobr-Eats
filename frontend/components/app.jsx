@@ -5,10 +5,12 @@ import { Route } from "react-router-dom";
 // import SignupFormContainer from "./session/signup_form_container"
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashPage from "./splash/splash";
+import NavBarContainer from "./nav/navbar";
 
 const App = () => (
 
     <div>
+        
         <SplashPage />
     </div>
 
