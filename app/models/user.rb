@@ -9,8 +9,8 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
 
      # Class method for finding a user ONLY if we have the correct username and password
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     return nil unless user
     user.is_password?(password) ? user : nil
   end
