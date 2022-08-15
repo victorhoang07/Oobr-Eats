@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import FormNav from "../nav/form_nav";
+import { login } from "../../actions/session_actions";
 
 
 const LoginForm = (props) => {
@@ -37,8 +38,6 @@ const LoginForm = (props) => {
         );
     }
 
-    
-
     return (
         
         <div className="login-container">
@@ -61,7 +60,7 @@ const LoginForm = (props) => {
                             className="auth-input" 
                             placeholder="Enter Password"/>
                     </label>
-                    <button className="login-button" onClick={handleSubmit}>Login</button>
+                    <button className="login-form-button" onClick={handleSubmit}>Login</button>
                 </form>
 
                 <button className="demo-button"> Continue with Demo</button>

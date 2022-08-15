@@ -7,6 +7,7 @@ import { Route } from "react-router-dom";
 import SplashPage from "./splash/splash";
 import NavBarContainer from "./nav/navbar";
 import LoginFormContainer from "../components/session_forms/login"
+import SignupFormContainer from "../components/session_forms/signup"
 
 const App = () => (
 
@@ -14,6 +15,8 @@ const App = () => (
         
         <Route exact path="/" component={SplashPage}/>
         <Route exact path="/login" component={LoginFormContainer} />
+        <Route exact path="/signup" component={SignupFormContainer} />
+
     </div>
 
 );
