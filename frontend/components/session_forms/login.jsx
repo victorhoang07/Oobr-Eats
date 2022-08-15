@@ -1,22 +1,28 @@
 import React, {useState} from "react";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+import FormNav from "../nav/form_nav";
+
 
 const LoginForm = (props) => {
     
     const [state, setState] = useState({
-        username: '',
+        email: '',
         password: ''
     })
 
-  
 
     const update = (field) => {
         return (e) => setState({...state, [field]: e.currentTarget.value})
     }
 
+    const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let mainPath = '/main'
         props.processForm(state);
+        history.push(mainPath)
     }
 
     const renderErrors = () => {
@@ -34,30 +40,50 @@ const LoginForm = (props) => {
     
 
     return (
-        <div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="form-box">
-                
-                <div className="form">
+        
+        <div className="login-container">
+            <FormNav />
+            <div className="form-container">
+                <form className="form-box">
+                    <p className="form-title">What's your email and password?</p>
                     {renderErrors()}
 
-                    <label>Email:
+                    <label>
                         <input type="text" value={state.email}
-                            onChange={update('username')}
-                            className="form-input"/>
+                            onChange={update('email')}
+                            className="auth-input"
+                            placeholder="Enter email"/>
                     </label>
                     <br />
-                    <label>Password:
-                        <input type="password" value={this.state.password}
+                    <label>
+                        <input type="password" value={state.password}
                             onChange={update('password')}
-                            className="form-input" />
+                            className="auth-input" 
+                            placeholder="Enter Password"/>
                     </label>
-                    <input type="submit" className="form-submit" value={this.props.formType} />
-                </div>
-            </form>
+                    <button className="login-button" onClick={handleSubmit}>Login</button>
+                </form>
+
+                <button className="demo-button"> Continue with Demo</button>
+            </div>
+
+        
         </div>
     )
     
 
 }
 
-export default SessionForm;
+const mSTP = ({errors}) => {
+    return {
+        errors: errors.session,
+    };
+}
+
+const mDTP = dispatch => {
+    return {
+        processForm: (user) => dispatch(login(user)),
+    };
+}
+
+export default connect(mSTP, mDTP)(LoginForm)
