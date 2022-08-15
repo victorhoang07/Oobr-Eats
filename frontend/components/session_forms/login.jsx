@@ -29,7 +29,7 @@ const LoginForm = (props) => {
     const renderErrors = () => {
         return (
             <ul>
-                {Object.values(props.errors).map((error, i) => (
+                {props.errors.map((error, i) => (
                     <li key={`${i}`}>
                         {error}
                     </li>
@@ -73,8 +73,7 @@ const LoginForm = (props) => {
 
 }
 
-const mSTP = ({errors}) => {
- 
+const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
     };
