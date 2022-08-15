@@ -30,7 +30,7 @@ const NavBar = (props) => {
                 <h2 className="main-name">Oobr Eats</h2>
 
                 <div className="auth-buttons">
-                    <button className="login-button" onClick={loginRoute}>Login</button>
+                    <button className="login-button" onClick={loginRoute}>Log in</button>
                     <button className="signup-button" onClick={signupRoute}>Sign Up</button>
                     <button onClick={props.logout}>Logout</button>
                 </div>
