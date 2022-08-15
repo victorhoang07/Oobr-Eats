@@ -14,7 +14,7 @@ const SplashPage = () => {
             <label className="switch">
                 <input type="checkbox"/>
                 <span className="slider round"></span>
-                <span className="over-switch">Delivery</span> <span className="over-switch">Pickup</span>
+                <span className="delivery">Delivery</span> <span className="pickup">Pickup</span>
             </label>
 
             <div className="input-address-container">

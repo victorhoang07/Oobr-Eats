@@ -1,7 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginModal from "./login_modal"
+import LoginModal from "./login_modal";
+import LogoutModal from './logout_modal';
 
 function Modal({ modal, closeModal }) {
 
@@ -13,6 +14,9 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'login':
             component = <LoginModal />;
+            break;
+        case 'main':
+            component = <LogoutModal />;
             break;
         default:
             return null;

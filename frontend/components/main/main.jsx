@@ -1,12 +1,13 @@
 import React from "react";
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
-
+import NavBarContainer from "../nav/navbar";
 const Main = (props) => {
 
     return (
         <div>
-            <button onClick={props.logout}>logout</button>
+            <NavBarContainer />
+            {/* <button onClick={props.logout}>logout</button> */}
         </div>
 
     )

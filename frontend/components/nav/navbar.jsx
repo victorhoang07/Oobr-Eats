@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import { useHistory } from "react-router-dom";
-import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { closeModal, openModal } from "../../actions/modal_actions";
 
@@ -28,8 +27,8 @@ const NavBar = (props) => {
     const AuthNav = () => {
         return (
             <div className="auth-navbar-container">
+                <button onClick={() => props.openLoginModal('login')}>loginmodal</button>
                 <h2 className="main-name">Oobr Eats</h2>
-                <button onClick={props.openLoginModal}>loginmodal</button>
                 <div className="auth-buttons">
                     <button className="login-button" onClick={loginRoute}>Log in</button>
                     <button className="signup-button" onClick={signupRoute}>Sign Up</button>
@@ -39,7 +38,27 @@ const NavBar = (props) => {
         )
     }
 
-    return AuthNav()
+    const MainNav = () => {
+        return (
+            <div className="auth-navbar-container">
+
+                <button onClick={() => props.openLoginModal('main')}>logoutmodal</button>
+                <h2 className="main-name">Oobr Eats</h2>
+
+                <label className="switch">
+                    <input type="checkbox" />
+                    <span className="slider round"></span>
+                    <span className="delivery">Delivery</span> <span className="pickup">Pickup</span>
+                </label>
+                
+
+            </div>
+        )
+    }
+    // debugger;
+    return (!props.currentUser) ? AuthNav() : MainNav()
+    // return AuthNav()
+  
 }
 
 const mSTP = (state) => {
@@ -50,7 +69,7 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
     return { 
-        openLoginModal: () => dispatch(openModal('login')),
+        openLoginModal: (type) => dispatch(openModal(type)),
         closeModal: () => dispatch(closeModal())
     }
 }
