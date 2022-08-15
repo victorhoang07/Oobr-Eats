@@ -6,15 +6,15 @@ import NavBarContainer from "./nav/navbar";
 import LoginFormContainer from "../components/session_forms/login"
 import SignupFormContainer from "../components/session_forms/signup"
 import Modal from "../components/modal/modal"
-
+import Main from "./main/main";
 const App = () => (
 
     <div>
         <Modal />
-        <Route exact path="/" component={SplashPage}/>
+        <AuthRoute exact path="/" component={SplashPage}/>
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute path="/main" />
+        <ProtectedRoute path="/main" component={Main}/>
 
     </div>
 

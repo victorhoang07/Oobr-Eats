@@ -19,27 +19,27 @@ const SignupForm = (props) => {
         return (e) => setState({ ...state, [field]: e.currentTarget.value })
     }
 
-    const history = useHistory()
+    // const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         let mainPath = '/main'
         props.processForm(state);
         props.loginUser(state);
-        history.push(mainPath)
+        // history.push(mainPath)
     }
 
-    // const renderErrors = () => {
-    //     return (
-    //         <ul>
-    //             {Object.values(props.errors).map((error, i) => (
-    //                 <li key={`${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    const renderErrors = () => {
+        return (
+            <ul>
+                {Object.values(props.errors).map((error, i) => (
+                    <li className="login-errors" key={`${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     return (
 
@@ -48,7 +48,7 @@ const SignupForm = (props) => {
             <div className="signup-form-container">
                 <form className="form-box">
                     <p className="form-title">What's your email and password?</p>
-                    {/* {renderErrors()} */}
+                    {renderErrors()}
 
                     <label>
                         <input type="text" value={state.first_name}
@@ -68,14 +68,14 @@ const SignupForm = (props) => {
                         <input type="text" value={state.email}
                             onChange={update('email')}
                             className="auth-input"
-                            placeholder="Enter email" />
+                            placeholder="Enter email (required)" />
                     </label>
                     <br />
                     <label>
                         <input type="password" value={state.password}
                             onChange={update('password')}
                             className="auth-input"
-                            placeholder="Enter Password" />
+                            placeholder="Enter Password (required)" />
                     </label>
                     <button className="signup-form-button" onClick={handleSubmit}>Sign Up</button>
                 </form>

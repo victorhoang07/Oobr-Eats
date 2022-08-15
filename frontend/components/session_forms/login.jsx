@@ -17,7 +17,7 @@ const LoginForm = (props) => {
         return (e) => setState({...state, [field]: e.currentTarget.value})
     }
 
-    const history = useHistory()
+    // const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,7 +30,7 @@ const LoginForm = (props) => {
         return (
             <ul>
                 {props.errors.map((error, i) => (
-                    <li key={`${i}`}>
+                    <li className="login-errors"key={`${i}`}>
                         {error}
                     </li>
                 ))}
