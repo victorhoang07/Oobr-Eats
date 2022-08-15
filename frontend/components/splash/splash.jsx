@@ -1,7 +1,7 @@
 import React from "react"
 import NavBarContainer from "../nav/navbar";
 import { Link } from "react-router-dom";
-import location_marker_logo from "../../../app/assets/images/location_marker_logo.jpeg"
+// import location_marker_logo from "../../../app/assets/images/location_marker_logo.jpeg"
 
 
 const SplashPage = () => {
@@ -18,7 +18,7 @@ const SplashPage = () => {
             </label>
 
             <div className="input-address-container">
-                <img src={location_marker_logo} />
+                {/* <img src={location_marker_logo} /> */}
                 <input className="input-address" type="text" placeholder="Enter your address" />
             </div>
 

@@ -23,7 +23,7 @@ const LoginForm = (props) => {
         e.preventDefault();
         let mainPath = '/main'
         props.processForm(state);
-        history.push(mainPath)
+        // history.push(mainPath)
     }
 
     const renderErrors = () => {
@@ -74,6 +74,7 @@ const LoginForm = (props) => {
 }
 
 const mSTP = ({errors}) => {
+ 
     return {
         errors: errors.session,
     };

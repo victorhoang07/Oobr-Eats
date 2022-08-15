@@ -20,17 +20,19 @@ export const receieveErrors = errors => ({
 })
 
 export const login = user => dispatch => {
-   return( APIUtil.login(user)
-    .then((result) => {
-        return dispatch(receiveCurrentUser(result))}
-    ))
+   return(APIUtil.login(user)
+    .then((result) => (
+        dispatch(receiveCurrentUser(result)))
+        
+    ), err => (dispatch(receieveErrors(err.responseJSON)))
+   )
 }
 
 export const logout = () => dispatch => (
     APIUtil.logout().then(() => (
         dispatch(logoutCurrentUser())
-    ))
-);
+    )
+));
 
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => (

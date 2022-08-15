@@ -10,10 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup
     window.logout = logout
 
-    const store = configureStore();
-    // we don't put the store directly on the window because
-    // it can be confusing when debugging, sometimes giving you access to state
-    // when you shouldn't
+  
+
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }  
+    
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
