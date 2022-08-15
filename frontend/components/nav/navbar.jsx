@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
+import { closeModal, openModal } from "../../actions/modal_actions";
 
 
 const NavBar = (props) => {
@@ -28,7 +29,7 @@ const NavBar = (props) => {
         return (
             <div className="auth-navbar-container">
                 <h2 className="main-name">Oobr Eats</h2>
-
+                <button onClick={props.openLoginModal}>loginmodal</button>
                 <div className="auth-buttons">
                     <button className="login-button" onClick={loginRoute}>Log in</button>
                     <button className="signup-button" onClick={signupRoute}>Sign Up</button>
@@ -49,9 +50,12 @@ const mSTP = (state) => {
 }
 
 const mDTP = dispatch => {
-    return {
+    return { 
+        openLoginModal: () => dispatch(openModal('login')),
+        closeModal: () => dispatch(closeModal()),
         logout: () => dispatch(logout())
     }
 }
 
 export default connect(mSTP, mDTP)(NavBar)
+
