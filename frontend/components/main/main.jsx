@@ -1,12 +1,21 @@
 import React from "react";
+import { logout } from "../../actions/session_actions";
+import { connect } from "react-redux";
 
-const Main = () => {
-
-
+const Main = (props) => {
 
     return (
-        <div>hello</div>
+        <div>
+            <button onClick={props.logout}>logout</button>
+        </div>
+
     )
 }
 
-export default Main
+
+const mDTP = dispatch => ({
+    logout: () => dispatch(logout())
+    })
+
+
+export default connect(null, mDTP)(Main)

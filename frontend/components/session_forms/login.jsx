@@ -17,13 +17,11 @@ const LoginForm = (props) => {
         return (e) => setState({...state, [field]: e.currentTarget.value})
     }
 
-    // const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         let mainPath = '/main'
         props.processForm(state);
-        // history.push(mainPath)
     }
 
     const renderErrors = () => {

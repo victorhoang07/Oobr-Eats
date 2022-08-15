@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
 import FormNav from "../nav/form_nav";
-import { login, signup } from "../../actions/session_actions";
+import {  signup } from "../../actions/session_actions";
 
 
 const SignupForm = (props) => {
@@ -19,20 +18,16 @@ const SignupForm = (props) => {
         return (e) => setState({ ...state, [field]: e.currentTarget.value })
     }
 
-    // const history = useHistory()
-
     const handleSubmit = (e) => {
         e.preventDefault();
         let mainPath = '/main'
         props.processForm(state);
-        props.loginUser(state);
-        // history.push(mainPath)
     }
 
     const renderErrors = () => {
         return (
             <ul>
-                {Object.values(props.errors).map((error, i) => (
+                {props.errors.map((error, i) => (
                     <li className="login-errors" key={`${i}`}>
                         {error}
                     </li>
@@ -98,8 +93,7 @@ const mSTP = ({ errors }) => {
 
 const mDTP = dispatch => {
     return {
-        loginUser: (user) => dispatch(login(user)),
-        processForm: (user) => dispatch(signup(user)),
+        processForm: (user) => dispatch(signup(user))
     };
 }
 

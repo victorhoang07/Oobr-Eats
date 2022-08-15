@@ -33,7 +33,6 @@ const NavBar = (props) => {
                 <div className="auth-buttons">
                     <button className="login-button" onClick={loginRoute}>Log in</button>
                     <button className="signup-button" onClick={signupRoute}>Sign Up</button>
-                    <button onClick={props.logout}>Logout</button>
                 </div>
 
             </div>
@@ -52,8 +51,7 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
     return { 
         openLoginModal: () => dispatch(openModal('login')),
-        closeModal: () => dispatch(closeModal()),
-        logout: () => dispatch(logout())
+        closeModal: () => dispatch(closeModal())
     }
 }
 
