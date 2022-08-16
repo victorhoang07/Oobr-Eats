@@ -2,13 +2,22 @@ import React from "react";
 import { logout } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const LogoutModal = () => {
+const LogoutModal = (props) => {
+
+
+
+    const handleLogout = () => {
+        const splashPage = '/'
+        props.logout()
+        props.closeModal()
+    }
 
     return (
-        <div className="login-modal">hello
-            {/* <button className="signup-modal-button" onClick={signupRoute}>Sign up</button>
-            <button className="login-modal-button" onClick={loginRoute}>Log in</button> */}
+        <div className="logout-modal">
+            <div> <button onClick={handleLogout}>Sign out</button> </div>
         </div>
     )
 }

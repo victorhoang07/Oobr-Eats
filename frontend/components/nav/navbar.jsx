@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { closeModal, openModal } from "../../actions/modal_actions";
-
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
 
@@ -43,13 +43,7 @@ const NavBar = (props) => {
             <div className="auth-navbar-container">
 
                 <button onClick={() => props.openLoginModal('main')}>logoutmodal</button>
-                <h2 className="main-name">Oobr Eats</h2>
-
-                <label className="switch">
-                    <input type="checkbox" />
-                    <span className="slider round"></span>
-                    <span className="delivery">Delivery</span> <span className="pickup">Pickup</span>
-                </label>
+                <Link to="/main" className="main-name-Oobr">Oobr <Link to="/main" className="main-name-Eats">Eats</Link></Link>
                 
 
             </div>

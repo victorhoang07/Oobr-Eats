@@ -1,12 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 const FormNav = () => {
 
     return (
         <div className="form-nav">
             <div className="form-nav-title-box">
-                <h2 className="form-nav-Oobr">Oobr <span className="form-nav-Eats">Eats</span></h2>
+                <Link to="/" className="form-nav-Oobr">Oobr <Link to="/" className="form-nav-Eats">Eats</Link></Link>
             </div> 
         </div>
     )
