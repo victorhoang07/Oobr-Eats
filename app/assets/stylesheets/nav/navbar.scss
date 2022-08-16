@@ -16,7 +16,7 @@
     position: relative;
     font-size: 40px;
     top: 30px;
-    left: 80px;
+    left: 30px;
     text-decoration: none;
     color: black;
 }
@@ -63,7 +63,7 @@
 
 .food-method {
   display: flex;
-  margin-left: 400px;
+  margin-left: 40vh;
   margin-top: -10px;
   background-color: rgb(238,238,238);
   width: 175px;
@@ -98,13 +98,44 @@
 .delivery-address {
   display: flex;
   position: relative;
-  margin-left: 630px;
+  // margin-left: 600px;
+  margin-left: 68vh;
   margin-top: -45px;
   background-color: rgb(238,238,238);
-  width: 175px;
+  width: 120px;
   height: 15px;
   padding: 15px;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
+}
+
+.search {
+  position: absolute;
+  left: 90vh;
+  margin-top: -45px;
+  border: none;
+  background-color: rgb(238,238,238);
+  width: 40%;
+  height: 15px;
+  padding: 15px;
+  border-radius: 50px;
+  outline: none;
+  font-size: 20px;
+}
+
+.cart-button {
+  position: absolute;
+  right: 5vh;
+  margin-top: -45px;
+  border: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 50px;
+  outline: none;
+  font-size: 20px;
+ 
 }

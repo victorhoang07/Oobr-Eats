@@ -69,7 +69,9 @@ const NavBar = (props) => {
                     App Academy
                 </div>
 
-                <input type="text" />
+                <input className="search" type="text" placeholder="What are you craving?"/>
+
+                <button className="cart-button">Cart</button>
 
             </div>
         )
