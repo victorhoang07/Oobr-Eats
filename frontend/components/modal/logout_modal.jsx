@@ -3,30 +3,40 @@ import { logout } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+
 
 const LogoutModal = (props) => {
 
 
-
     const handleLogout = () => {
-        const splashPage = '/'
         props.logout()
         props.closeModal()
     }
-
+   
     return (
         <div className="logout-modal">
-            <div> <button onClick={handleLogout}>Sign out</button> </div>
+            <div>
+            <div className="logout-modal-name">{props.currentUser.first_name}</div>
+            <div className="orders-logout-modal"><a >Orders</a></div>
+            <div className="favorites-logout-modal"><a >Favorites</a></div>
+            <button className="logout-button" onClick={handleLogout}>Sign out</button>
+
+            </div>
         </div>
     )
 }
 
-const mapDispatchToProps = dispatch => {
+const mSTP = (state) => {
+    return {
+        currentUser: state.entities.users[state.session.id]
+    }
+}
+
+const mDTP = dispatch => {
     return {
         logout: () => dispatch(logout()),
         closeModal: () => dispatch(closeModal())
     };
 };
 
-export default connect(null, mapDispatchToProps)(LogoutModal)
+export default connect(mSTP, mDTP)(LogoutModal)

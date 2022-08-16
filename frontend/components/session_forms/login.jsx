@@ -22,7 +22,7 @@ const LoginForm = (props) => {
 
     const handleDemoUser = (e) => {
         e.preventDefault();
-        const demoUser = { email: 'victor', password: 'victor' }
+        const demoUser = { email: 'Demo@user.com', password: 'demouser' }
         setState(demoUser)
         props.processForm(demoUser)
     }

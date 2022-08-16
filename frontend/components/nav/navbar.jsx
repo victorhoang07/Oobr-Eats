@@ -43,7 +43,10 @@ const NavBar = (props) => {
             <div className="auth-navbar-container">
 
                 <button onClick={() => props.openLoginModal('main')}>logoutmodal</button>
-                <Link to="/main" className="main-name-Oobr">Oobr <Link to="/main" className="main-name-Eats">Eats</Link></Link>
+                <Link to="/main" className="main-name-Oobr">Oobr <span className="main-name-Eats">Eats</span></Link>
+                <div>
+                    
+                </div>
                 
 
             </div>
