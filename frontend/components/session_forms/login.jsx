@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 import FormNav from "../nav/form_nav";
-import { login } from "../../actions/session_actions";
+import { login, removeErrors} from "../../actions/session_actions";
 
 
 const LoginForm = (props) => {
@@ -12,7 +12,10 @@ const LoginForm = (props) => {
         password: ''
     })
 
-
+    useEffect(() => {
+        props.removeErrors()
+    }, [])
+    
     const update = (field) => {
         return (e) => setState({...state, [field]: e.currentTarget.value})
     }
@@ -80,6 +83,7 @@ const mSTP = ({ errors }) => {
 const mDTP = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
+        removeErrors: () => dispatch(removeErrors())
     };
 }
 

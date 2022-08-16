@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import FormNav from "../nav/form_nav";
-import {  signup } from "../../actions/session_actions";
+import {  removeErrors, signup } from "../../actions/session_actions";
 
 
 const SignupForm = (props) => {
@@ -13,6 +13,9 @@ const SignupForm = (props) => {
         password: ''
     })
 
+    useEffect(() => {
+        props.removeErrors()
+    }, [])    
 
     const update = (field) => {
         return (e) => setState({ ...state, [field]: e.currentTarget.value })
@@ -93,6 +96,7 @@ const mSTP = ({ errors }) => {
 
 const mDTP = dispatch => {
     return {
+        removeErrors: () => dispatch(removeErrors()),
         processForm: (user) => dispatch(signup(user))
     };
 }

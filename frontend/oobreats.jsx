@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login
     window.signup = signup
     window.logout = logout
-
   
 
     let store;
