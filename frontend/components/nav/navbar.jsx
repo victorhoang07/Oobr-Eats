@@ -72,7 +72,7 @@ const NavBar = (props) => {
 
                 <input className="search" type="text" placeholder="What are you craving?"/>
 
-                <button className="cart-button"><BsCart2/> Cart</button>
+                <button className="cart-button"><BsCart2 className="cart-icon"/>Cart</button>
 
             </div>
         )

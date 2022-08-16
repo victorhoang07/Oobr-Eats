@@ -125,7 +125,7 @@
 }
 
 .cart-button {
-  // display: flex;
+  display: flex;
   position: absolute;
   right: 5vh;
   margin-top: -45px;
@@ -138,5 +138,8 @@
   border-radius: 50px;
   outline: none;
   font-size: 20px;
-//  justify-content: center;
+ justify-content: center;
+}
+.cart-icon{
+  color:white;
 }
