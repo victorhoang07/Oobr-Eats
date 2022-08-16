@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import FormNav from "../nav/form_nav";
-import {  removeErrors, signup } from "../../actions/session_actions";
+import {  login, removeErrors, signup } from "../../actions/session_actions";
 
 
 const SignupForm = (props) => {
@@ -19,6 +19,13 @@ const SignupForm = (props) => {
 
     const update = (field) => {
         return (e) => setState({ ...state, [field]: e.currentTarget.value })
+    }
+
+    const handleDemoUser = (e) => {
+        e.preventDefault();
+        const demoUser = { email: 'victor', password: 'victor' }
+        setState(demoUser)
+        props.login(demoUser)
     }
 
     const handleSubmit = (e) => {
@@ -78,7 +85,7 @@ const SignupForm = (props) => {
                     <button className="signup-form-button" onClick={handleSubmit}>Sign Up</button>
                 </form>
 
-                <button className="signup-demo-button">Continue with Demo</button>
+                <button className="signup-demo-button" onClick={handleDemoUser}>Continue with Demo</button>
             </div>
 
 
@@ -97,7 +104,8 @@ const mSTP = ({ errors }) => {
 const mDTP = dispatch => {
     return {
         removeErrors: () => dispatch(removeErrors()),
-        processForm: (user) => dispatch(signup(user))
+        processForm: (user) => dispatch(signup(user)),
+        login: (user) => dispatch(login(user))
     };
 }
 

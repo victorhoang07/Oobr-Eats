@@ -15,11 +15,17 @@ const LoginForm = (props) => {
     useEffect(() => {
         props.removeErrors()
     }, [])
-    
+
     const update = (field) => {
         return (e) => setState({...state, [field]: e.currentTarget.value})
     }
 
+    const handleDemoUser = (e) => {
+        e.preventDefault();
+        const demoUser = { email: 'victor', password: 'victor' }
+        setState(demoUser)
+        props.processForm(demoUser)
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -64,7 +70,7 @@ const LoginForm = (props) => {
                     <button className="login-form-button" onClick={handleSubmit}>Login</button>
                 </form>
 
-                <button className="demo-button"> Continue with Demo</button>
+                <button className="demo-button" onClick={handleDemoUser}> Continue with Demo</button>
             </div>
 
         
