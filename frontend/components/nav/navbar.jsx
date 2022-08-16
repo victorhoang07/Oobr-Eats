@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { closeModal, openModal } from "../../actions/modal_actions";
 import { Link } from "react-router-dom";
-
+import { BsCart2 } from "react-icons/bs"
 const NavBar = (props) => {
 
     const history = useHistory()
@@ -64,14 +64,15 @@ const NavBar = (props) => {
                 <Link to="/main" className="main-name-Oobr">Oobr <span className="main-name-Eats">Eats</span></Link>
                 
                 {method}
-                
+               
+               
                 <div className="delivery-address">
                     App Academy
                 </div>
 
                 <input className="search" type="text" placeholder="What are you craving?"/>
 
-                <button className="cart-button">Cart</button>
+                <button className="cart-button"><BsCart2/> Cart</button>
 
             </div>
         )
