@@ -37,24 +37,45 @@ const NavBar = (props) => {
             </div>
         )
     }
-
+    
     const MainNav = () => {
+        let method;
+
+        if (window.location.href === 'http://localhost:3000/#/main') {
+            method = (
+            <div className="food-method">
+                <span className="method"><Link className="toggle" to="/main">Delivery</Link></span>
+                <span><Link className="toggle" to="/pickup">Pickup</Link></span>
+            </div>
+            )
+        } else {
+            method = (
+            <div className="food-method">
+                <span><Link className="toggle" to="/main">Delivery</Link></span>
+                <span className="method"><Link className="toggle" to="/pickup">Pickup</Link></span>
+            </div>
+            )
+        }
+        
         return (
             <div className="auth-navbar-container">
 
                 <button onClick={() => props.openLoginModal('main')}>logoutmodal</button>
                 <Link to="/main" className="main-name-Oobr">Oobr <span className="main-name-Eats">Eats</span></Link>
-                <div>
-                    
-                </div>
                 
+                {method}
+                
+                <div className="delivery-address">
+                    App Academy
+                </div>
+
+                <input type="text" />
 
             </div>
         )
     }
-    // debugger;
+
     return (!props.currentUser) ? AuthNav() : MainNav()
-    // return AuthNav()
   
 }
 

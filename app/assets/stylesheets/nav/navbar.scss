@@ -1,6 +1,5 @@
 .auth-navbar-container {
   position: absolute;
-//   display: inline-block;
   width: 100%;
 }
 
@@ -60,4 +59,52 @@
     width: 100px;
     border-radius: 45px;
     cursor: pointer;
+}
+
+.food-method {
+  display: flex;
+  margin-left: 400px;
+  margin-top: -10px;
+  background-color: rgb(238,238,238);
+  width: 175px;
+  height: 15px;
+  padding: 15px;
+  border-radius: 50px;
+  // align-items: center;
+  justify-content: center;
+}
+
+.toggle {
+  position: relative;
+  display: inline;
+  font-size: 17px;
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.method {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100px;
+  background-color: white;
+  border-radius: 35px;
+  bottom: 10px;
+}
+
+.delivery-address {
+  display: flex;
+  position: relative;
+  margin-left: 630px;
+  margin-top: -45px;
+  background-color: rgb(238,238,238);
+  width: 175px;
+  height: 15px;
+  padding: 15px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
 }
