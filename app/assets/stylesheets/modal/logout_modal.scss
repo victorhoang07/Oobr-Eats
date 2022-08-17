@@ -1,6 +1,9 @@
 .logout-modal {
     border-bottom: 1px solid rgb(214, 214, 214);
-    height: 500px
+    height: 500px;
+    // transition: transform .4s ease .1s;
+    // transform: translate(-100%, 0%);
+    // z-index: 10;
 }
 
 .logout-modal-name {

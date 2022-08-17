@@ -16,7 +16,7 @@
     position: relative;
     font-size: 40px;
     top: 30px;
-    left: 30px;
+    left: 75px;
     text-decoration: none;
     color: black;
 }
@@ -63,7 +63,7 @@
 
 .food-method {
   display: flex;
-  margin-left: 40vh;
+  margin-left: 35vh;
   margin-top: -10px;
   background-color: rgb(238,238,238);
   width: 175px;
@@ -142,4 +142,13 @@
 }
 .cart-icon{
   color:white;
+  padding-right: 2px;
+}
+
+.menu-icon {
+  position: absolute;
+  left: 30px;
+  top: 35px;
+  width: 30px;
+  height: 30px;
 }

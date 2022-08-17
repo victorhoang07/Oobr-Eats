@@ -20,7 +20,6 @@ const LogoutModal = (props) => {
             <div className="orders-logout-modal"><a >Orders</a></div>
             <div className="favorites-logout-modal"><a >Favorites</a></div>
             <button className="logout-button" onClick={handleLogout}>Sign out</button>
-
             </div>
         </div>
     )

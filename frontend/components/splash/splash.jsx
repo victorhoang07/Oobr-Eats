@@ -1,7 +1,6 @@
 import React from "react"
 import NavBarContainer from "../nav/navbar";
 import { Link } from "react-router-dom";
-// import location_marker_logo from "../../../app/assets/images/location_marker_logo.jpeg"
 import { useState } from "react";
 
 const SplashPage = () => {
@@ -26,14 +25,8 @@ const SplashPage = () => {
             
             <div className="splash-text">Order food to your door</div>
 
-            {/* <label className="switch">
-                <input type="checkbox"/>
-                <span className="slider round"></span>
-                <span className="delivery">Delivery</span> <span className="pickup">Pickup</span>
-            </label> */}
-
             <div className="input-address-container">
-                {/* <img src={location_marker_logo} /> */}
+                <img className="location-icon" src={window.locationIcon} />
                 <input className="input-address" type="text" placeholder="Enter your address" />
                 
                 <button onClick={() => handleClick()} className="find-food" >Find Food</button>

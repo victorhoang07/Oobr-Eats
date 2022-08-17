@@ -27,7 +27,8 @@ const NavBar = (props) => {
     const AuthNav = () => {
         return (
             <div className="auth-navbar-container">
-                <button onClick={() => props.openLoginModal('login')}>loginmodal</button>
+                
+                <img className="menu-icon" src={window.menuIcon} onClick={() => props.openLoginModal('login')}/>
                 <h2 className="main-name">Oobr Eats</h2>
                 <div className="auth-buttons">
                     <button className="login-button" onClick={loginRoute}>Log in</button>
@@ -60,7 +61,7 @@ const NavBar = (props) => {
         return (
             <div className="auth-navbar-container">
 
-                <button onClick={() => props.openLoginModal('main')}>logoutmodal</button>
+                <img className="menu-icon" src={window.menuIcon} onClick={() => props.openLoginModal('main')} />
                 <Link to="/main" className="main-name-Oobr">Oobr <span className="main-name-Eats">Eats</span></Link>
                 
                 {method}
