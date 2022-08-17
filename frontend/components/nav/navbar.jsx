@@ -1,18 +1,15 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { closeModal, openModal } from "../../actions/modal_actions";
 import { Link } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs"
+
 const NavBar = (props) => {
 
     const history = useHistory()
 
-    // useEffect(() => {
-    //     if (currentUser) {
-    //         props.fetchCurrentUser(currentUser.id)
-    //     }
-    // }, [])
+    const search = useRef(null)
     
     const signupRoute = () => {
         let signupPath = '/signup'
@@ -23,12 +20,17 @@ const NavBar = (props) => {
         let loginPath = '/login'
         history.push(loginPath)
     }
-
+    const handleMenuClick = (type) => {
+        props.openLoginModal('login')
+        const menu = document.querySelector(".modal-child")
+        menu.classList.toggle('modal-open')
+    } 
     const AuthNav = () => {
+
         return (
             <div className="auth-navbar-container">
                 
-                <img className="menu-icon" src={window.menuIcon} onClick={() => props.openLoginModal('login')}/>
+                <img className="menu-icon" src={window.menuIcon} onClick={() => props.openModal('login')}/>
                 <h2 className="main-name">Oobr Eats</h2>
                 <div className="auth-buttons">
                     <button className="login-button" onClick={loginRoute}>Log in</button>
@@ -58,10 +60,14 @@ const NavBar = (props) => {
             )
         }
         
+        useEffect(() => {
+            search.current.focus();
+        }, []);
+
+
         return (
             <div className="auth-navbar-container">
-
-                <img className="menu-icon" src={window.menuIcon} onClick={() => props.openLoginModal('main')} />
+                <img className="menu-icon" src={window.menuIcon} onClick={() => props.openModal('main')} />
                 <Link to="/main" className="main-name-Oobr">Oobr <span className="main-name-Eats">Eats</span></Link>
                 
                 {method}
@@ -71,9 +77,9 @@ const NavBar = (props) => {
                     App Academy
                 </div>
 
-                <input className="search" type="text" placeholder="What are you craving?"/>
+                <input ref={search} className="search" onClick={() => props.openModal('search')} type="text" placeholder="What are you craving?"/>
 
-                <button className="cart-button"><BsCart2 className="cart-icon"/>Cart</button>
+                <button onClick={() => props.openModal('cart')} className="cart-button"><BsCart2 className="cart-icon"/>Cart</button>
 
             </div>
         )
@@ -91,7 +97,7 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
     return { 
-        openLoginModal: (type) => dispatch(openModal(type)),
+        openModal: (type) => dispatch(openModal(type)),
         closeModal: () => dispatch(closeModal())
     }
 }

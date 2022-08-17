@@ -140,9 +140,14 @@
   font-size: 20px;
  justify-content: center;
 }
+
+.cart-button:hover {
+  background-color: rgb(35, 35, 35);
+}
+
 .cart-icon{
   color:white;
-  padding-right: 2px;
+  padding-right: 10px;
 }
 
 .menu-icon {

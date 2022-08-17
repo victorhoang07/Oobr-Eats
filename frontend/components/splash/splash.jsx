@@ -10,7 +10,6 @@ const SplashPage = () => {
     })    
 
     const handleClick = () => {
-
         return setState({state, findFoodClicked: true})
     }
 
