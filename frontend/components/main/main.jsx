@@ -76,7 +76,7 @@ const Main = (props) => {
                             return (
                                 <div key={i}>
                                     <div className="slide">
-                                        <div>{SLIDER[slide]}
+                                        <div>
                                             <img className="slide-img"src="https://oobreats.s3.amazonaws.com/splash1.jpeg" alt=""/>
                                         </div>
                                     </div>

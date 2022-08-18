@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from "react-redux";
 
 const ResaturantIndex = (props) => {
 
@@ -51,5 +51,9 @@ const ResaturantIndex = (props) => {
         </div>
     )
 }
+
+const mSTP = (state) => ({
+    restaurants: state.entities.restaurants
+})
 
 export default ResaturantIndex
