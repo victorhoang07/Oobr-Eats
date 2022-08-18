@@ -14,7 +14,8 @@ restaurant1 = Restaurant.create!(
         description: "American All Comfort",
         rating: 4.3,
         pricing_rating: "$",
-        hours: "10:45 AM - 9:30 PM"
+        hours: "10:45 AM - 9:30 PM",
+        review_count: 637
 )
 
 restaurant2 = Restaurant.create!(
