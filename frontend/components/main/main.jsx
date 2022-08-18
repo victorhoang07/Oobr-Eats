@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import NavBarContainer from "../nav/navbar";
 import { tns } from "tiny-slider";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
+import RestarantIndex from "../restaurant/restaurant_index";
+
+
 const CATEGORIES = {
         "All": 'https://oobreats.s3.amazonaws.com/deals.png',
         "Alcohol":'https://oobreats.s3.amazonaws.com/alcohol.png',
@@ -95,8 +98,7 @@ const Main = (props) => {
             <NavBarContainer />
             {renderCategories()}
             {renderCarousel()}
-
-
+            <RestarantIndex />
         </div>
 
     )
