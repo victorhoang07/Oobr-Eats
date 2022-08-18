@@ -3,7 +3,7 @@ import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import NavBarContainer from "../nav/navbar";
 import { tns } from "tiny-slider";
-
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 const CATEGORIES = {
         "All": 'https://oobreats.s3.amazonaws.com/deals.png',
         "Alcohol":'https://oobreats.s3.amazonaws.com/alcohol.png',
@@ -65,16 +65,17 @@ const Main = (props) => {
         <div id="slider">
             <div className="slider-container">
                     <div className="controller">
-                        <button className="previous">prev</button>
-                        <button className="next">next</button>
+                        <button className="previous"><BsArrowLeft className="direction-icon"/></button>
+                        <button className="next"><BsArrowRight className="direction-icon"/></button>
                     </div>
                     <div className="my-slider">
                         {Object.keys(SLIDER).map((slide, i) => {
                             return (
                                 <div key={i}>
                                     <div className="slide">
-                                            <div>{SLIDER[slide]}</div>
+                                        <div>{SLIDER[slide]}
                                             <img className="slide-img"src="https://oobreats.s3.amazonaws.com/splash1.jpeg" alt=""/>
+                                        </div>
                                     </div>
                                 </div>
                             )

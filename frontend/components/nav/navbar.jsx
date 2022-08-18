@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { closeModal, openModal } from "../../actions/modal_actions";
 import { Link } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs"
-
+import { FiSearch } from "react-icons/fi"
 const NavBar = (props) => {
 
     const history = useHistory()
@@ -72,12 +72,14 @@ const NavBar = (props) => {
                 
                 {method}
                
-               
                 <div className="delivery-address">
                     App Academy
                 </div>
 
-                <input ref={search} className="search" onClick={() => props.openModal('search')} type="text" placeholder="What are you craving?"/>
+                <div className="search-container"> 
+                    <FiSearch className="search-icon"/>
+                    <input ref={search} className="search" onClick={() => props.openModal('search')} type="text" placeholder="What are you craving?"/>
+                </div>
 
                 <button onClick={() => props.openModal('cart')} className="cart-button"><BsCart2 className="cart-icon"/>Cart</button>
 

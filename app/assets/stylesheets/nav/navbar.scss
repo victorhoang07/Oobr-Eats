@@ -110,7 +110,12 @@
   justify-content: center;
 }
 
-.search {
+// .icon-search-container{
+//   position: absolute;
+//   left: 90vh;
+// }
+
+.search-container {
   position: absolute;
   left: 90vh;
   margin-top: -45px;
@@ -122,6 +127,25 @@
   border-radius: 50px;
   outline: none;
   font-size: 20px;
+  justify-content: center;
+}
+
+.search-icon {
+  position: relative;
+  bottom: 3px;
+}
+
+.search {
+  position: absolute;
+  border: none;
+  background-color: rgb(238,238,238);
+  width: 40%;
+  height: 15px;
+  padding: 15px;
+  border-radius: 50px;
+  outline: none;
+  font-size: 20px;
+  margin-top: -15px;
 }
 
 .cart-button {

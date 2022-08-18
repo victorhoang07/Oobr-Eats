@@ -2,9 +2,9 @@
 .categories-container {
     position: absolute;
     display: flex;
-    height: 100px;
+    height: 110px;
     width: 90%;
-    top: 115px;
+    top: 125px;
     left: 5%;
     justify-content: space-between;
     align-items: center;
@@ -22,16 +22,16 @@
 }
 
 .category-icon {
-    height: 60px;
-    width: 60px
+    height: 70px;
+    width: 70px
 }
 
 #slider {
     position: absolute;
-    top: 240px;
+    top: 290px;
     width: 100%;
     // left: 5%;
-    height: 40%;
+    height: 30%;
     margin: auto;
     // border: 1px solid black;
     display: flex;
@@ -49,11 +49,25 @@
     justify-content: center;
 }
 
+.controller > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+}
 
+.direction-icon{
+    height: 30px;
+    width: 25px;
+    font-weight: bold;
+}
 
 .previous {
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 1%;
     z-index: 2
 }
@@ -61,7 +75,7 @@
 .next{
     position: absolute;
     right: 1%;
-    top: 50%;
+    top: 48%;
     z-index: 2
 }
 
@@ -77,14 +91,14 @@
     // margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .slide-img {
     width: 50vh;
-    height: 30vh;
+    height: 25vh;
     background-position: center;
     background-size: cover;
     cursor: pointer;
-//     border-radius: 10px;
-//     // border: 3px black solid;
+    border-radius: 10px;
 }
