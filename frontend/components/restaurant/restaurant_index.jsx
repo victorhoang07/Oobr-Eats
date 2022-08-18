@@ -5,6 +5,7 @@ const ResaturantIndex = (props) => {
 
 
     return (
+        // look here for the filer V change the name through props
         <div className="restaurant-index-container">
             <h2 className="restaurant-index-text">Popular near you </h2>
             <div className="main-filter-container">
@@ -25,18 +26,22 @@ const ResaturantIndex = (props) => {
                     <div className="restaurant">2</div>
                     <div className="restaurant">3</div>
                     <div className="restaurant">4</div>
+
                     <div className="restaurant">1</div>
                     <div className="restaurant">2</div>
                     <div className="restaurant">3</div>
                     <div className="restaurant">4</div>
+
                     <div className="restaurant">1</div>
                     <div className="restaurant">2</div>
                     <div className="restaurant">3</div>
                     <div className="restaurant">4</div>
+
                     <div className="restaurant">1</div>
                     <div className="restaurant">2</div>
                     <div className="restaurant">3</div>
                     <div className="restaurant">4</div>
+
                     <div className="restaurant">1</div>
                     <div className="restaurant">2</div>
                     <div className="restaurant">3</div>
@@ -45,7 +50,6 @@ const ResaturantIndex = (props) => {
             </div>
         </div>
     )
-
 }
 
 export default ResaturantIndex

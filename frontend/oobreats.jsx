@@ -3,13 +3,12 @@ import ReactDOM from "react-dom/client"
 import {login, signup, logout} from './actions/session_actions'
 import configureStore from './store/store'
 import Root from "./components/root";
-// import {login, signup, logout} from './actions/session_actions'
-
+import {requestRestaurants} from "./actions/restaurant_actions"
 document.addEventListener("DOMContentLoaded", () => {
     window.login = login
     window.signup = signup
     window.logout = logout
-  
+    window.requestRestaurants = requestRestaurants
 
     let store;
     if (window.currentUser) {

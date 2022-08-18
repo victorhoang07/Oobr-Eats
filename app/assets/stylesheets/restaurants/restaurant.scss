@@ -2,29 +2,25 @@
 
 .restaurant-index-text {
     position: absolute;
-    left: 60vh;
+    left: 55vh;
     font-size: 40px;
 }
 
 .restaurant-index-container {
     position: absolute;
-    top: 70%;
+    top: 70%; // change her for the filtered listed
     width: 100%;
-    // border: 1px solid black;
-    // grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 .main-filter-container {
     // border: 1px solid black;
-  
     // margin-top: 20px;
     position: absolute;
-
     // padding-top: 50px;
     margin-left: 2%;
     top:10vh;
     width: 50vh;
-       
 }
 
 .restaurant_index {
@@ -48,7 +44,7 @@
 
 .restaurant {
     margin: 10px;
-    height: 150px; 
+    height: 200px; 
     background-color: gray;
     
 }

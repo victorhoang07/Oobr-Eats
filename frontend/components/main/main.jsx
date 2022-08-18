@@ -12,7 +12,7 @@ const CATEGORIES = {
         "Alcohol":'https://oobreats.s3.amazonaws.com/alcohol.png',
         "Sandwich":'https://oobreats.s3.amazonaws.com/sandwich.png',
         "Drinks":'https://oobreats.s3.amazonaws.com/coffeeandtea.png',
-        "Comfort Food": 'https://oobreats.s3.amazonaws.com/comfortfood.png',
+        "Comfort": 'https://oobreats.s3.amazonaws.com/comfortfood.png',
         'Italian': 'https://oobreats.s3.amazonaws.com/italian.png',
         'American': 'https://oobreats.s3.amazonaws.com/american.png',
         'Pizza': 'https://oobreats.s3.amazonaws.com/pizza.png',
