@@ -1,0 +1,54 @@
+
+
+.restaurant-index-text {
+    position: absolute;
+    left: 60vh;
+    font-size: 40px;
+}
+
+.restaurant-index-container {
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    // border: 1px solid black;
+    // grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main-filter-container {
+    // border: 1px solid black;
+  
+    // margin-top: 20px;
+    position: absolute;
+
+    // padding-top: 50px;
+    margin-left: 2%;
+    top:10vh;
+    width: 50vh;
+       
+}
+
+.restaurant_index {
+    position: absolute;
+    // border: 1px solid blue;
+    left: 55vh;
+    top: 5vh;
+    width: 65%;
+    margin-left: 2% ;
+}
+
+.restaurants-container {
+    // position: relative;
+
+    // border: 1px solid black;
+    // width: 100%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.restaurant {
+    margin: 10px;
+    height: 150px; 
+    background-color: gray;
+    
+}

@@ -162,7 +162,8 @@
   border-radius: 50px;
   outline: none;
   font-size: 20px;
- justify-content: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .cart-button:hover {
@@ -180,4 +181,5 @@
   top: 35px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
