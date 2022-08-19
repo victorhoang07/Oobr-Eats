@@ -2,15 +2,45 @@
 
 .restaurant-index-text {
     position: absolute;
-    left: 55vh;
+    left: 59vh;
     font-size: 40px;
+}
+
+.filter-text {
+    font-size:30px;
+    padding-bottom: 30px;
+}
+
+.filter-text2 {
+    font-size:20px;
+    padding-bottom: 20px;
+}
+
+.money-button {
+    font-size: 15px;
+    padding: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(238,238,238);
+    border: none;
+    margin-right: 15px;
+    border-radius: 25px;
+}
+
+.money-button:hover {
+    background-color: rgb(214, 214, 214);
+
 }
 
 .restaurant-index-container {
     position: absolute;
     top: 70%; // change her for the filtered listed
     width: 100%;
-
+}
+@media only screen and (min-height: 1000px) {
+  .restaurant-index-container {
+    top: 55%;;
+  }
 }
 
 .main-filter-container {
@@ -19,9 +49,10 @@
     position: absolute;
     // padding-top: 50px;
     margin-left: 2%;
-    top:10vh;
+    top: 1vh;
     width: 50vh;
 }
+
 
 .restaurant_index {
     position: absolute;
@@ -34,17 +65,39 @@
 
 .restaurants-container {
     // position: relative;
-
     // border: 1px solid black;
     // width: 100%;
     margin-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
 
 .restaurant {
     margin: 10px;
     height: 200px; 
-    background-color: rgb(238,238,238);
+    // background-color: rgb(103, 103, 103);
+}
+
+.restaurant-index-img {
+    height: 150px;
+    width: 100%;
+}
+
+.restaurant-index-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.restaurant-index-name {
+    // display: inline;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.restaurant-index-rating {
     
+    margin-top: 7px;
+    padding: 5px;
+    background-color: rgb(238,238,238);
+    border-radius: 50%;
+    font-size: 17px;
 }

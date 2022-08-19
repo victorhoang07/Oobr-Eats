@@ -9,13 +9,14 @@
 Restaurant.delete_all
 
 restaurant1 = Restaurant.create!(
-        name: "Chipotle Mexican Grill",
+        name: "Chipotle",
         address: "680 Avenue of Americas, New York, NY 10010",
         description: "American All Comfort",
         rating: 4.3,
         pricing_rating: "$",
         hours: "10:45 AM - 9:30 PM",
-        review_count: 637
+        review_count: 637,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/chipotle.jpeg"
 )
 
 restaurant2 = Restaurant.create!(
@@ -24,5 +25,29 @@ restaurant2 = Restaurant.create!(
         description: "Comfort American All Sandwich",
         rating: 4.5,
         pricing_rating: "$",
-        hours: "10:00 AM - 11:59 PM"
+        hours: "10:00 AM - 11:59 PM",
+        review_count: 304,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/popeyes.jpeg"
+)
+
+restaurant3 = Restaurant.create!(
+         name: "McDonald's",
+        address: "39 Union Square W, New York, NY 10003",
+        description: "Comfort American All Sandwich",
+        rating: 4.8,
+        pricing_rating: "$",
+        hours: "10:00 AM - 11:59 PM",
+        review_count: 224,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/mcdonalds.jpeg"
+)
+
+restaurant4 = Restaurant.create!(
+         name: "Poke Bowl",
+        address: "26 E 17th St New York, NY 10003",
+        description: "Comfort Japanese All Chinese",
+        rating: 4.9,
+        pricing_rating: "$$",
+        hours: "10:00 AM - 9:45 PM",
+        review_count: 190,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/mcdonalds.jpeg"
 )

@@ -44,19 +44,19 @@ const NavBar = (props) => {
     const MainNav = () => {
         let method;
 
-        if (window.location.href === 'http://localhost:3000/#/main') {
+        if (!window.location.href === 'http://localhost:3000/#/main') {
             method = (
-            <div className="food-method">
-                <span className="method"><Link className="toggle" to="/main">Delivery</Link></span>
-                <span><Link className="toggle" to="/pickup">Pickup</Link></span>
-            </div>
+                <div className="food-method">
+                    <span><Link className="toggle" to="/main">Delivery</Link></span>
+                    <span className="method"><Link className="toggle" to="/pickup">Pickup</Link></span>
+                </div>
             )
         } else {
             method = (
-            <div className="food-method">
-                <span><Link className="toggle" to="/main">Delivery</Link></span>
-                <span className="method"><Link className="toggle" to="/pickup">Pickup</Link></span>
-            </div>
+                <div className="food-method">
+                    <span className="method"><Link className="toggle" to="/main">Delivery</Link></span>
+                    <span><Link className="toggle" to="/pickup">Pickup</Link></span>
+                </div>
             )
         }
         
@@ -73,7 +73,7 @@ const NavBar = (props) => {
                 {method}
                
                 <div className="delivery-address">
-                    App Academy
+                    App Academy • Now
                 </div>
 
                 <div className="search-container"> 
