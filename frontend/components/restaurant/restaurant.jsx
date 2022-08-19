@@ -6,7 +6,7 @@ import NavBar from "../nav/navbar";
 const Restaurant = (props) => {
     // const id = props.match.params.restaurantId
     useEffect(() => {
-        props.requestRestaurant(props.match.params.restaurantId)
+        props.requestRestaurant(props.match.params.restaurantId).then(console.log)
         // props.requestRestaurant(props.restaurant.id)
     }, []) 
 
@@ -14,12 +14,12 @@ const Restaurant = (props) => {
         <div>
             <NavBar />
             <div>{Object.values(props.restaurant).map(restaurant => {
-                
+                if (parseInt(restaurant.id) === parseInt(props.match.params.restaurantId)){
                 return (
-                    <div>
+                    <div key={restaurant.id}>
                         {restaurant.name}
                     </div>
-                )
+                )}
             })}
             </div>
         </div>
