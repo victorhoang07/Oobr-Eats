@@ -44,7 +44,7 @@ const NavBar = (props) => {
     const MainNav = () => {
         let method;
 
-        if (!window.location.href === 'http://localhost:3000/#/main') {
+        if (window.location.href !== 'http://localhost:3000/#/main') {
             method = (
                 <div className="food-method">
                     <span><Link className="toggle" to="/main">Delivery</Link></span>

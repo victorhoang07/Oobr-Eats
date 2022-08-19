@@ -7,6 +7,8 @@ import LoginFormContainer from "../components/session_forms/login"
 import SignupFormContainer from "../components/session_forms/signup"
 import Modal from "../components/modal/modal"
 import Main from "./main/main";
+import Pickup from "./pickup/pickup";
+
 const App = () => (
 
     <div>
@@ -15,6 +17,7 @@ const App = () => (
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path="/main" component={Main}/>
+        <ProtectedRoute exact path="/pickup" component={Pickup} />
 
     </div>
 

@@ -1,0 +1,17 @@
+.pickup-restaurant-index {
+    position: relative;
+    top: 20vh;
+    width: 860px;
+    margin-left: 1% ;
+}
+
+.pickup-restaurants-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+
+.pickup-text {
+    font-size: 30px;
+    margin-bottom: 50px;
+}

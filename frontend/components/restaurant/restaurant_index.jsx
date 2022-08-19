@@ -25,7 +25,7 @@ const ResaturantIndex = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="restaurant_index">
+            <div className="restaurant-index">
                 <div className="restaurants-container">
                     {Object.values(props.restaurants).map((restaurant) => {
                         return (
