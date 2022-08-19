@@ -7,11 +7,11 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show
-        @bench = Restaurant.find(params[:id])
+        @restaurant = Restaurant.find(params[:id])
     end
 
     def create
-        @bench = Restaurant.create!(restaurant_params)
+        @restaurant = Restaurant.create!(restaurant_params)
         render :show
     end
 

@@ -1,16 +1,23 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { requestRestaurants } from "../../actions/restaurant_actions"
+import { useHistory } from "react-router-dom";
 
 const ResaturantIndex = (props) => {
 
     useEffect(() => {
-        props.requestRestaraunts()
+        props.requestRestaurants()
     }, []) 
 
+    const history = useHistory()
+
+    const restaurantRoute = (id) => {
+        let path = `/restaurant/${id}`
+        history.push(path)
+    }
 
     return (
-        // look here for the filer V change the name through props
+        
         <div className="restaurant-index-container">
             <h2 className="restaurant-index-text">Popular near you </h2>
             <div className="main-filter-container">
@@ -29,7 +36,7 @@ const ResaturantIndex = (props) => {
                 <div className="restaurants-container">
                     {Object.values(props.restaurants).map((restaurant) => {
                         return (
-                            <div className="restaurant" key={restaurant.id}>
+                            <div className="restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
                                 <img className="restaurant-index-img" src={restaurant.img_url}/>
                                 <div className="restaurant-index-info">
                                     <p className="restaurant-index-name">{restaurant.name}</p>
@@ -60,12 +67,13 @@ const ResaturantIndex = (props) => {
     )
 }
 
-const mSTP = (state) => ({
+const mSTP = (state) => {
+return({
     restaurants: state.entities.restaurants
-})
+})}
 
 const mDTP = dispatch => ({
-    requestRestaraunts: () => dispatch(requestRestaurants())
+    requestRestaurants: () => dispatch(requestRestaurants())
 })
 
 export default connect(mSTP, mDTP)(ResaturantIndex)

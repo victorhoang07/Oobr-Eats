@@ -5,7 +5,7 @@ import NavBar from "../nav/navbar";
 const Pickup = (props) => {
 
     useEffect(() => {
-        props.requestRestaraunts()
+        props.requestRestaurants()
     }, []) 
 
 
@@ -54,7 +54,7 @@ const mSTP = (state) => ({
 })
 
 const mDTP = dispatch => ({
-    requestRestaraunts: () => dispatch(requestRestaurants())
+    requestRestaurants: () => dispatch(requestRestaurants())
 })
 
 export default connect(mSTP, mDTP)(Pickup)

@@ -11,7 +11,7 @@ export const receiveRestaurants = restaurants => ({
 
 export const receiveRestaurant = restaurant => ({
     type: RECEIVE_RESTAURANT,
-    restaurants
+    restaurant
 });
 
 export const requestRestaurants = () => dispatch => (
