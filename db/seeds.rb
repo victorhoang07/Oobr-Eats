@@ -22,7 +22,7 @@ restaurant1 = Restaurant.create!(
 restaurant2 = Restaurant.create!(
          name: "Popeye's",
         address: "934 8th Avenue, New York, NY 10019",
-        description: "Comfort American All Sandwich",
+        description: "American Comfort All Sandwich",
         rating: 4.5,
         pricing_rating: "$",
         hours: "10:00 AM - 11:59 PM",
@@ -33,7 +33,7 @@ restaurant2 = Restaurant.create!(
 restaurant3 = Restaurant.create!(
          name: "McDonald's",
         address: "39 Union Square W, New York, NY 10003",
-        description: "Comfort American All Sandwich",
+        description: "American Comfort All Sandwich",
         rating: 4.8,
         pricing_rating: "$",
         hours: "10:00 AM - 11:59 PM",
@@ -44,7 +44,7 @@ restaurant3 = Restaurant.create!(
 restaurant4 = Restaurant.create!(
          name: "Poke Bowl",
         address: "26 E 17th St New York, NY 10003",
-        description: "Comfort Japanese All Chinese",
+        description: "Japanese Comfort All Chinese",
         rating: 4.9,
         pricing_rating: "$$",
         hours: "10:00 AM - 9:45 PM",
