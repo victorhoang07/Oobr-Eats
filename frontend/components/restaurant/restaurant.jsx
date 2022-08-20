@@ -1,35 +1,39 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { connect } from "react-redux";
 import { requestRestaurant } from "../../actions/restaurant_actions";
 import NavBar from "../nav/navbar";
-
+import Loading from "../loading/loading"
 const Restaurant = (props) => {
-    // const id = props.match.params.restaurantId
+    
+    const {restaurant} = props
+    // const [restaurant, setRestaurant] = useState({})
+
     useEffect(() => {
-        props.requestRestaurant(props.match.params.restaurantId).then(console.log)
-        // props.requestRestaurant(props.restaurant.id)
+        props.requestRestaurant(props.match.params.restaurantId)
+    
     }, []) 
 
-    return (
-        <div>
-            <NavBar />
-            <div>{Object.values(props.restaurant).map(restaurant => {
-                if (parseInt(restaurant.id) === parseInt(props.match.params.restaurantId)){
-                return (
-                    <div key={restaurant.id}>
-                        {restaurant.name}
-                    </div>
-                )}
-            })}
-            </div>
-        </div>
-    )
 
+
+    if (!props.restaurant){
+        return (<Loading/>)
+    } else {
+        return (
+            <div>
+                <NavBar />
+                <div className="restaurant-show-img-container">
+                    <img className="restaurant-show-img" src={restaurant.img_url} alt="" />
+                </div>
+                <div>{restaurant.name}</div>
+                <div>{restaurant.hours}</div>
+            </div>
+        )
+    }
 }
 
 const mSTP = (state, ownProps) => {
-return({
-    restaurant: state.entities.restaurants
+    return({
+        restaurant: state.entities.restaurants[ownProps.match.params.restaurantId]
 })}
 
 const mDTP = (dispatch) => ({
