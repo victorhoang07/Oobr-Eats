@@ -99,7 +99,7 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
     return { 
-        openModal: (type) => dispatch(openModal(type)),
+        openModal: (type, itemId) => dispatch(openModal(type)),
         closeModal: () => dispatch(closeModal())
     }
 }

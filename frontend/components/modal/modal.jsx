@@ -5,6 +5,7 @@ import LoginModal from "./login_modal";
 import LogoutModal from './logout_modal';
 import SearchModal from './search_modal';
 import CartModal from './cart_modal';
+import MenuItemModal from "./menu_item_modal"
 
 function Modal({ modal, closeModal }) {
 
@@ -19,7 +20,7 @@ function Modal({ modal, closeModal }) {
 
     let side;
     let component;
-    switch (modal) {
+    switch (modal.type) {
         case 'login':
             component = <LoginModal />;
             side = "modal-child"
@@ -34,6 +35,10 @@ function Modal({ modal, closeModal }) {
             break;
         case 'cart':
             component = <CartModal />;
+            side = 'cart-child'
+            break;
+        case 'menuItem':
+            component = <MenuItemModal itemId={modal.itemId} />
             side = 'cart-child'
             break;    
         default:

@@ -67,7 +67,7 @@ const ResaturantIndex = (props) => {
     )
 }
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
 return({
     restaurants: state.entities.restaurants
 })}
