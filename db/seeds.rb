@@ -7,6 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Restaurant.delete_all
+MenuItem.delete_all
+User.delete_all
+# make sure to db:drop, setup, db:migrate and db:seed
+demo_user = User.create!(
+        first_name: "Demo",
+        last_name: "User",
+        email: "Demo@user.com",
+        password: "demouser"
+)
+
 
 restaurant1 = Restaurant.create!(
         name: "Chipotle",
@@ -21,7 +31,7 @@ restaurant1 = Restaurant.create!(
 
 restaurant2 = Restaurant.create!(
          name: "Popeye's",
-        address: "934 8th Avenue, New York, NY 10019",
+        address: "14 E 23rd StNew York, NY 10010",
         description: "American Comfort All Sandwich",
         rating: 4.5,
         pricing_rating: "$",
@@ -50,4 +60,17 @@ restaurant4 = Restaurant.create!(
         hours: "10:00 AM - 9:45 PM",
         review_count: 190,
         img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/mcdonalds.jpeg"
+)
+
+
+menu2_item1 = MenuItem.create!(
+        name: "8PC Nuggets A La Cart",
+        price: 7.78,
+        restaurant_id: 2,
+)
+
+menu2_item2 = MenuItem.create!(
+        name: "Handcrafted Tender Combo (5 Pcs)",
+        price: 15.58,
+        restaurant_id: 2,
 )

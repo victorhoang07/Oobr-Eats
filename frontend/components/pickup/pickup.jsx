@@ -1,12 +1,20 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import NavBar from "../nav/navbar";
+import { useHistory } from "react-router-dom";
 
 const Pickup = (props) => {
 
     useEffect(() => {
         props.requestRestaurants()
     }, []) 
+
+    const history = useHistory()
+
+    const restaurantRoute = (id) => {
+        let path = `/restaurant/${id}`
+        history.push(path)
+    }
 
 
     return (
@@ -18,7 +26,7 @@ const Pickup = (props) => {
                 <div className="pickup-restaurants-container">
                     {Object.values(props.restaurants).map((restaurant) => {
                         return (
-                            <div className="restaurant" key={restaurant.id}>
+                            <div className="restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
                                 <img className="restaurant-index-img" src={restaurant.img_url} />
                                 <div className="restaurant-index-info">
                                     <p className="restaurant-index-name">{restaurant.name}</p>

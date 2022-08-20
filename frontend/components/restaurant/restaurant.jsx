@@ -4,18 +4,13 @@ import { requestRestaurant } from "../../actions/restaurant_actions";
 import NavBar from "../nav/navbar";
 import Loading from "../loading/loading"
 import { BsFillStarFill } from "react-icons/bs"
-
+import MenuItemIndex from "../menu_item/menu_item_index"
 const Restaurant = (props) => {
     
     const {restaurant} = props
-    // const [restaurant, setRestaurant] = useState({})
-
     useEffect(() => {
         props.requestRestaurant(props.match.params.restaurantId)
-    
     }, []) 
-
-
 
     if (!props.restaurant){
         return (<Loading/>)
@@ -39,16 +34,17 @@ const Restaurant = (props) => {
                         </div>
                             <div>Hours: {restaurant.hours}</div>
                     </div>
-                </div>
+                </div> 
+                <MenuItemIndex restaurant={restaurant} />
+                
             </div>
         )
     }
 }
 
-const mSTP = (state, ownProps) => {
-    return({
+const mSTP = (state, ownProps) => ({
         restaurant: state.entities.restaurants[ownProps.match.params.restaurantId]
-})}
+})
 
 const mDTP = (dispatch) => ({
     requestRestaurant: (restaurantId) => dispatch(requestRestaurant(restaurantId))
