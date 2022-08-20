@@ -38,8 +38,8 @@ function Modal({ modal, closeModal }) {
             side = 'cart-child'
             break;
         case 'menuItem':
-            component = <MenuItemModal itemId={modal.itemId} />
-            side = 'cart-child'
+            component = <MenuItemModal itemId={modal.itemId} restaurantId={modal.restaurantId}/>
+            side = 'middle'
             break;    
         default:
             return null;

@@ -1,0 +1,22 @@
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 70%;
+    width: 50%;
+}
+
+.item-modal-container {
+    height: 100%;
+    width: 100%;
+    // border: 1px solid red
+}
+
+.item-modal-img {
+    width: 100%;
+    height: 70%;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}

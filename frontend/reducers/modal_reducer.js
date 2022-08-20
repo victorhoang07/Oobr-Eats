@@ -4,7 +4,7 @@ export default function modalReducer(state = {}, action) {
   switch (action.type) {
     case OPEN_MODAL:
       // return action.modal;
-      return {type: action.modal, itemId: action.itemId}
+      return {type: action.modal, itemId: action.itemId, restaurantId: action.restaurantId}
     case CLOSE_MODAL:
       return null;
     default:

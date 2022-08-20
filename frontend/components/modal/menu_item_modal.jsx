@@ -4,25 +4,27 @@ import Loading from "../loading/loading";
 
 const MenuItemModal = (props) => {
     
-    const {restaurant} = props
-    // console.log(props)
+    const {restaurants, itemId, restaurantId} = props
+    const restaurant = restaurants[parseInt(restaurantId)]
+    const itemInfo = restaurant.menu[itemId]
+    // console.log(itemInfo)
     if (!restaurant) {
         return (<Loading />)
     } else {
         return(
-            <div>
-                {restaurant[2].name}
-                {/* {props.itemId} */}
-                beep
+            <div className="item-modal-container">
+                <img className="item-modal-img" src={itemInfo.img_url} alt="" />
+                <div className="item-modal-name">{itemInfo.name}</div>
+                <div className="item-modal-price">{itemInfo.price}</div>
+                <div className="item-modal-descript">{itemInfo.description}</div>
             </div>
         )
     }
 }
 
 const mSTP = (state, ownProps) => {
-    console.log(ownProps)
     return ({
-    restaurant: state.entities.restaurants
+    restaurants: state.entities.restaurants
 })}
 
 export default connect(mSTP,null)(MenuItemModal)
