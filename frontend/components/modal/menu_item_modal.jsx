@@ -7,7 +7,7 @@ const MenuItemModal = (props) => {
     const {restaurants, itemId, restaurantId} = props
     const restaurant = restaurants[parseInt(restaurantId)]
     const itemInfo = restaurant.menu[itemId]
-    // console.log(itemInfo)
+    
     if (!restaurant) {
         return (<Loading />)
     } else {
@@ -22,9 +22,8 @@ const MenuItemModal = (props) => {
     }
 }
 
-const mSTP = (state, ownProps) => {
-    return ({
+const mSTP = (state, ownProps) => ({
     restaurants: state.entities.restaurants
-})}
+})
 
 export default connect(mSTP,null)(MenuItemModal)
