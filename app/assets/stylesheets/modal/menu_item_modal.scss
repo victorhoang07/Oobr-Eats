@@ -4,19 +4,94 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    height: 70%;
-    width: 50%;
+    height: 600px;
+    width: 900px;
 }
+
 
 .item-modal-container {
     height: 100%;
     width: 100%;
     // border: 1px solid red
+    position: relative;
+}
+
+.exit-item-modal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 .item-modal-img {
     width: 100%;
     height: 70%;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-bottom: 20px;
+}
+
+.item-modal-name {
+    font-size: 35px;
+    margin-left: 30px;
+}
+
+.item-modal-price {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.item-button-container{
+    position: relative;
+}
+
+.item-modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    // border: 1px solid black;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.item-buttons {
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    // padding: 20px;
+    font-size: 30px;
+    background-color: rgb(238,238,238);
+    cursor: pointer;
+}
+
+.item-buttons:hover {
+    background-color: rgb(214, 214, 214)
+}
+
+.add-item-button {
+    position: absolute;
+    right: 20px;
+    // left: 5px;
+    width: 60%;
+    height: 60px;
+    width: 70%;
+    background-color: black;
+    color: white;
+    border: none;
+    bottom: 0px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.add-item-button:hover {
+    background-color: rgb(35, 35, 35)
 }
