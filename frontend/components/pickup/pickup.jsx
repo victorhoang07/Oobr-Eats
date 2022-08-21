@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import NavBar from "../nav/navbar";
 import { useHistory } from "react-router-dom";
-
+import PickupMap from "../map/pickup_map";
 const Pickup = (props) => {
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const Pickup = (props) => {
     return (
         <div className="pickup-container">
             <NavBar />
-
+            <div className="pickup-and-map">
             <div className="pickup-restaurant-index">
                 <div className="pickup-text">Pickup nearby</div>
                 <div className="pickup-restaurants-container">
@@ -52,6 +52,9 @@ const Pickup = (props) => {
                     <div className="restaurant">4</div>
 
                 </div>
+            </div>
+
+            <div className="pickup-map-container"><PickupMap /></div>
             </div>
         </div>
     )
