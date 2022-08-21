@@ -5,3 +5,43 @@
   width: 25%;
   background-color: white;
 }
+
+.cart-container {
+  border: 1px solid black;
+  height: 100vh;
+  position: relative;
+}
+
+.cart-item {
+  margin-top: 20px;
+  border: 1px solid blue;
+  // justify-content: space-around;
+  position: relative;
+}
+
+.item-quantity {
+  margin-left: 5%
+}
+
+.cart-item-info {
+  position: absolute;
+  top: 0px;
+  left: 10%
+}
+
+.checkout-button {
+  position: absolute;
+  bottom: 30px;
+  width: 80%;
+  margin-left: 10%;
+  height: 60px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: rgb(35, 35, 35)
+}

@@ -93,13 +93,14 @@ const NavBar = (props) => {
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        cart: state.entities.cart
     }
 }
 
 const mDTP = dispatch => {
     return { 
-        openModal: (type, itemId) => dispatch(openModal(type)),
+        openModal: (type) => dispatch(openModal(type)),
         closeModal: () => dispatch(closeModal())
     }
 }
