@@ -26,8 +26,8 @@ const Pickup = (props) => {
                 <div className="pickup-restaurants-container">
                     {Object.values(props.restaurants).map((restaurant) => {
                         return (
-                            <div className="restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
-                                <img className="restaurant-index-img" src={restaurant.img_url} />
+                            <div className="pickup-restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
+                                <img className="pickup-index-img" src={restaurant.img_url} />
                                 <div className="restaurant-index-info">
                                     <p className="restaurant-index-name">{restaurant.name}</p>
                                     <div className="restaurant-index-rating">{restaurant.rating}</div>

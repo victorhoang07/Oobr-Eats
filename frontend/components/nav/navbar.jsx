@@ -64,6 +64,15 @@ const NavBar = (props) => {
             search.current.focus();
         }, []);
 
+        let cartText;
+        if (Object.values(props.cart).length === 0){
+            cartText = 'Cart'
+        } else if (Object.values(props.cart).length === 1) {
+            cartText = `${Object.values(props.cart).length} Item`
+        } else {
+            cartText = `${Object.values(props.cart).length} Items`
+        }
+
 
         return (
             <div className="auth-navbar-container">
@@ -81,7 +90,7 @@ const NavBar = (props) => {
                     <input ref={search} className="search" onClick={() => props.openModal('search')} type="text" placeholder="What are you craving?"/>
                 </div>
 
-                <button onClick={() => props.openModal('cart')} className="cart-button"><BsCart2 className="cart-icon"/>Cart</button>
+                <button onClick={() => props.openModal('cart')} className="cart-button"><BsCart2 className="cart-icon"/>{cartText}</button>
 
             </div>
         )
