@@ -17,8 +17,13 @@ const CartModal = (props) => {
                         return (
                             <div className="cart-item" key={cartItem.item.id}>
                                 {/* <div className="cart-item-container"> */}
-                                    <div className="item-quantity">{cartItem.quantity}</div>
-                                    <span className="cart-item-info">{cartItem.item.name} <div>{(cartItem.item.price * cartItem.quantity).toFixed(2)}</div></span>
+                                    <button className="item-quantity">{cartItem.quantity}</button>
+                                    <span className="cart-item-info">
+                                        {cartItem.item.name} 
+                                        <div className="cart-item-price">${(cartItem.item.price * cartItem.quantity).toFixed(2)}</div>
+                                    </span>
+                                    
+                                    <div ><img className="cart-item-img"src="https://oobreats.s3.amazonaws.com/restaurantphotos/popeyes.jpeg" alt="" /></div>
                                 {/* </div> */}
                             </div>
                         )

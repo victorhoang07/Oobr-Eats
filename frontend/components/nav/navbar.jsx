@@ -44,20 +44,20 @@ const NavBar = (props) => {
     const MainNav = () => {
         let method;
 
-        if (window.location.href !== 'http://localhost:3000/#/main') {
-            method = (
-                <div className="food-method">
-                    <span><Link className="toggle" to="/main">Delivery</Link></span>
-                    <span className="method"><Link className="toggle" to="/pickup">Pickup</Link></span>
-                </div>
-            )
-        } else {
+        if (window.location.href !== 'http://localhost:3000/#/pickup') {
             method = (
                 <div className="food-method">
                     <span className="method"><Link className="toggle" to="/main">Delivery</Link></span>
                     <span><Link className="toggle" to="/pickup">Pickup</Link></span>
                 </div>
             )
+        } else {
+            method = (
+                <div className="food-method">
+                    <span><Link className="toggle" to="/main">Delivery</Link></span>
+                    <span className="method"><Link className="toggle" to="/pickup">Pickup</Link></span>
+                </div>
+                )
         }
         
         useEffect(() => {
