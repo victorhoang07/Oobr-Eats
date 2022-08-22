@@ -43,7 +43,7 @@ const MenuItemModal = (props) => {
         return(
             <div className="item-modal-container">
                 <button onClick={() => props.closeModal()} className="exit-item-modal">&#x2716;</button>
-                <img className="item-modal-img" src='https://oobreats.s3.amazonaws.com/restaurantphotos/popeyes.jpeg' alt="" />
+                <img className="item-modal-img" src={itemInfo.img_url} alt="" />
                 <div className="item-modal-name">{itemInfo.name}</div>
                 <div className="item-modal-price">${itemInfo.price}</div>
                 <div className="item-modal-descript">{itemInfo.description}</div>

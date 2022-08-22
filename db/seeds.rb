@@ -9,7 +9,7 @@
 Restaurant.delete_all
 MenuItem.delete_all
 User.delete_all
-# make sure to db:drop, setup, db:migrate and db:seed
+# make sure to db:drop,db:create, db:migrate and db:seed, take out associations before seeding
 demo_user = User.create!(
         first_name: "Demo",
         last_name: "User",
@@ -20,8 +20,10 @@ demo_user = User.create!(
 
 restaurant1 = Restaurant.create!(
         name: "Chipotle",
-        address: "680 Avenue of Americas, New York, NY 10010",
+        address: "680 Avenue of Americas",
         description: "American All Comfort",
+        lat: 40.741772,
+        lng: -73.993479,
         rating: 4.3,
         pricing_rating: "$",
         hours: "10:45 AM - 9:30 PM",
@@ -31,8 +33,10 @@ restaurant1 = Restaurant.create!(
 
 restaurant2 = Restaurant.create!(
          name: "Popeye's",
-        address: "14 E 23rd StNew York, NY 10010",
+        address: "14 E 23rd St",
         description: "American Comfort All Sandwich",
+        lat: 40.740879,
+        lng: -73.988269,
         rating: 4.5,
         pricing_rating: "$",
         hours: "10:00 AM - 11:59 PM",
@@ -42,8 +46,10 @@ restaurant2 = Restaurant.create!(
 
 restaurant3 = Restaurant.create!(
          name: "McDonald's",
-        address: "39 Union Square W, New York, NY 10003",
+        address: "39 Union Square W",
         description: "American Comfort All Sandwich",
+        lat:40.73695365424206,
+        lng: -73.99049191269874,
         rating: 4.8,
         pricing_rating: "$",
         hours: "10:00 AM - 11:59 PM",
@@ -52,14 +58,16 @@ restaurant3 = Restaurant.create!(
 )
 
 restaurant4 = Restaurant.create!(
-         name: "Poke Bowl",
-        address: "26 E 17th St New York, NY 10003",
+        name: "Poke Bowl",
+        address: "26 E 17th",
         description: "Japanese Comfort All Chinese",
+        lat: 40.737361, 
+        lng: -73.990965,
         rating: 4.9,
         pricing_rating: "$$",
         hours: "10:00 AM - 9:45 PM",
         review_count: 190,
-        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/mcdonalds.jpeg"
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/pokebowl.jpeg"
 )
 
 
@@ -67,10 +75,12 @@ menu2_item1 = MenuItem.create!(
         name: "8PC Nuggets A La Cart",
         price: 7.78,
         restaurant_id: 2,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/popeyesmenu/8pcalacarte.webp"
 )
 
 menu2_item2 = MenuItem.create!(
         name: "Handcrafted Tender Combo (5 Pcs)",
         price: 15.58,
         restaurant_id: 2,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/popeyesmenu/tendercombo.webp"
 )

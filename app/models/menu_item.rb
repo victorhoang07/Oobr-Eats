@@ -6,4 +6,5 @@ class MenuItem < ApplicationRecord
     primary_key: :id, 
     foreign_key: :restaurant_id,
     class_name: :Restaurant
+   
 end

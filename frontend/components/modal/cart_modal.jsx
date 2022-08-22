@@ -30,7 +30,7 @@ const CartModal = (props) => {
                                         <button onClick={() => removeCartItem(cartItem.item.id)} className="remove-button">Remove Item</button>
                                     </span>
                                     
-                                    <div ><img className="cart-item-img"src="https://oobreats.s3.amazonaws.com/restaurantphotos/popeyes.jpeg" alt="" /></div>
+                                    <div ><img className="cart-item-img"src={cartItem.item.img_url} alt="" /></div>
                                 
                             </div>
                         )

@@ -1,32 +1,88 @@
+
+const LIGHT_CIRCLE = {
+  path: google.maps.SymbolPath.CIRCLE,
+  scale: 15,
+  fillColor: "#FFFFFF",
+  strokeColor: "#FFFFFF",
+  fillOpacity: 1.0,
+  strokeWeight: 0.4,
+}
+
+const DARK_CIRCLE = {
+  path: google.maps.SymbolPath.CIRCLE,
+  scale: 15,
+  fillColor: "#000000",
+  strokeColor: "#000000",
+  fillOpacity: 1.0,
+  strokeWeight: 0.4
+}
+
 class MarkerManager {
   constructor(map, handleClick){
     this.map = map;
     this.handleClick = handleClick;
-    this.markers = {};
   }
 
-  updateMarkers(restaurants){
-    const restaurantObj = {};
-    restaurants.forEach(bench => benchesObj[bench.id] = bench);
+    updateMarkers(restaurants){
+        Object.values(restaurants || {}).forEach(newRestaurant => 
+            {
+                this.createMarkerFromRestaurant(newRestaurant, this.handleClick)
+            })
+    }
 
-    restaurants
-      .forEach(newRestaurant => this.createMarkerFromRestaraunt(newRestaurant, this.handleClick))
+    createMarkerFromRestaurant(restaurant) {
+        const position = new google.maps.LatLng(restaurant.lat, restaurant.lng);
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            title: restaurant.name,
+            label: {
+                text: `${restaurant.rating}`,
+                color: "black"
+            },
+            icon: LIGHT_CIRCLE,
+        });
 
-//     Object.keys(this.markers)
-//       .filter(benchId => !benchesObj[benchId])
-//       .forEach((benchId) => this.removeMarker(this.markers[benchId]))
-  }
+        marker.addListener('click', () => this.handleClick(restaurant));
+        marker.addListener('mouseover', () => {
+            const label = marker.getLabel();
+            label.color = "white"
+            marker.setLabel(label);
+            marker.setIcon(DARK_CIRCLE);
+        })
+        marker.addListener('mouseout', () => {
+            const label = marker.getLabel();
+            label.color = "black"
+            marker.setLabel(label);
+            marker.setIcon(LIGHT_CIRCLE);
+        })
 
-    createMarkerFromRestaraunt(restaurant) {
-    const position = new google.maps.LatLng(restaurant.lat, restaurant.lng);
-    const marker = new google.maps.Marker({
-      position,
-      map: this.map,
-      restaurantId: restaurant.id
-    });
+        const infoWindowContent = 
+            `<div class="marker-content">` +
+                    `<img src="${restaurant.img_url}" class="marker-img" />` +
+                    `<br/>` +
+                    `<div class="marker-info-container">` +
+                        `<div class="marker-title">${restaurant.name}</div>` +
+                        `<div class="marker-rating">${restaurant.rating}</div>` +
+                    `</ div>` +
+            `</div>`;
+        
+        const infoWindow = new google.maps.InfoWindow({
+            content: infoWindowContent,
+            maxWidth: 250
+        })
 
-    marker.addListener('click', () => this.handleClick(restaurant));
-    this.markers[marker.restaurantId] = marker;
+        marker.addListener("mouseover", () => {
+            infoWindow.open({
+                anchor: marker,
+                map: this.map,
+                shouldFocus: false
+            })
+        })
+
+        marker.addListener("mouseout", () => {
+            infoWindow.close()
+        })
   }
 
 }

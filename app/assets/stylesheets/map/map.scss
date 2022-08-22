@@ -14,3 +14,28 @@
     // position: relative;
     // border: 1px solid black;
 }
+
+.marker-img {
+    width: 199px;
+    height: auto;
+}
+
+.marker-info-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.marker-title {
+    font-size: 20px;
+}
+
+.marker-rating {
+    position: relative;
+    bottom: 3px;
+    font-size: 17px;
+    background-color: rgb(238,238,238);
+    border-radius: 50%;
+    padding: 5px;
+}

@@ -14,7 +14,7 @@ const MenuItemIndex = (props) => {
                     return (
                         <div className="menu-item" onClick={() => props.openModal('menuItem', item.id, restaurant.id)} key={item.id} >
                             <button className="menu-item-add"> + </button>
-                            <img className="menu-item-img" src='https://oobreats.s3.amazonaws.com/restaurantphotos/popeyes.jpeg'/>
+                            <img className="menu-item-img" src={item.img_url}/>
                             <div className="menu-item-info">
                                 <p className="menu-item-name">{item.name}</p>
                                 <div className="menu-item-price">${item.price}</div>
