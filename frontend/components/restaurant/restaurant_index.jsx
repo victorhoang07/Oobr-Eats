@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { requestRestaurants } from "../../actions/restaurant_actions"
 import { useHistory } from "react-router-dom";
+import { receiveFilter, removeFilter } from "../../actions/filter_actions";
 
 const ResaturantIndex = (props) => {
 
@@ -16,8 +17,12 @@ const ResaturantIndex = (props) => {
         history.push(path)
     }
 
-    return (
-        
+    const handleFilterClick = (type) => {
+        props.removeFilter()
+        props.receiveFilter(type)
+    }
+
+    return (        
         <div className="restaurant-index-container">
             <h2 className="restaurant-index-text">Popular near you </h2>
             <div className="main-filter-container">
@@ -25,10 +30,10 @@ const ResaturantIndex = (props) => {
                     <p className="filter-text">All Stores</p>
                     <p className="filter-text2">Price Range</p>
                     <div className="price-range-buttons-container">
-                        <button className="money-button">$</button>
-                        <button className="money-button">$$</button>
-                        <button className="money-button">$$$</button>
-                        <button className="money-button">$$$$</button>
+                        <button onClick={() => handleFilterClick('$')} className="money-button">$</button>
+                        <button onClick={() => handleFilterClick('$$')}  className="money-button">$$</button>
+                        <button onClick={() => handleFilterClick('$$$')}  className="money-button">$$$</button>
+                        <button onClick={() => handleFilterClick('$$$$')}  className="money-button">$$$$</button>
                     </div>
                 </div>
             </div>
@@ -73,7 +78,9 @@ return({
 })}
 
 const mDTP = dispatch => ({
-    requestRestaurants: () => dispatch(requestRestaurants())
+    requestRestaurants: () => dispatch(requestRestaurants()),
+    receiveFilter: (type) => dispatch(receiveFilter(type)),
+    removeFilter: () => dispatch(removeFilter())
 })
 
 export default connect(mSTP, mDTP)(ResaturantIndex)

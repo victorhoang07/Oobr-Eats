@@ -5,7 +5,7 @@ import NavBarContainer from "../nav/navbar";
 import { tns } from "tiny-slider";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 import RestarantIndex from "../restaurant/restaurant_index";
-
+import { receiveFilter, removeFilter } from "../../actions/filter_actions";
 
 const CATEGORIES = {
         "All": 'https://oobreats.s3.amazonaws.com/deals.png',
@@ -44,12 +44,17 @@ const Main = (props) => {
         })
     }, [])
 
+    const handleFilterClick = (type) => {
+        props.removeFilter()
+        props.receiveFilter(type)
+    }
+
     const renderCategories = () => {
         return (
             <div className="categories-container">
                 {Object.keys(CATEGORIES).map((category, i) => {
                     return (
-                        <button key={i} className="category-button">
+                        <button onClick={() => handleFilterClick(category)} key={i} className="category-button">
                             <img className="category-icon" src={CATEGORIES[category]}/>
                             <div className="category-text">
                                 {category}
@@ -106,8 +111,10 @@ const Main = (props) => {
 
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
-    })
+    logout: () => dispatch(logout()),
+    receiveFilter: (type) => dispatch(receiveFilter(type)),
+    removeFilter: () => dispatch(removeFilter())
+})
 
 
 export default connect(null, mDTP)(Main)
