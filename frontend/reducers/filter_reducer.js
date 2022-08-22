@@ -8,7 +8,7 @@ const filterReducer = (state = {}, action) => {
         case RECEIVE_FILTER:
             return  Object.assign({}, state, {type: action.filter})
         case REMOVE_FILTER:
-            return null
+            return {}
         default:
             return state;
     }

@@ -11,6 +11,7 @@ export const receiveFilter = filter => {
 }
 
 export const removeFilter = () => {
-    return {type: REMOVE_FILTER
+    return {
+        type: REMOVE_FILTER
     }
 }

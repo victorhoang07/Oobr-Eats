@@ -7,6 +7,7 @@ import { receiveFilter, removeFilter } from "../../actions/filter_actions";
 const ResaturantIndex = (props) => {
 
     useEffect(() => {
+        props.removeFilter()
         props.requestRestaurants()
     }, []) 
 
@@ -50,7 +51,7 @@ const ResaturantIndex = (props) => {
                                 </div>
                                 <div>$0.69 Delivery Fee</div>
                             </div>
-                        )} else if (props.filter === undefined) {
+                        )} else if (props.filter === undefined || props.filter === null) {
                             return (
                                 <div className="restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
                                     <h2 className="restaurant-index-text">Popular near you </h2>
