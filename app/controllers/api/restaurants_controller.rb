@@ -28,7 +28,9 @@ class Api::RestaurantsController < ApplicationController
       :pricing_rating,
       :hours,
       :review_count,
-      :img_url
+      :img_url,
+      :lat,
+      :lng
     )
   end
 

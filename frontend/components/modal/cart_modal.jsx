@@ -1,13 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
+import { removeCartItem } from "../../actions/cart_actions";
+import { closeModal } from "../../actions/modal_actions";
 
 const CartModal = (props) => {
 
-    const {cart} = props
+    const {cart, removeCartItem, closeModal} = props
     
     if (Object.keys(cart).length === 0) {
         return (
-            <div>I know you're hungry. Fill your cart!</div>
+            <div className="empty-cart">
+                <div><img src={window.empty_cart} alt="" /> </div>
+                <div className="empty-cart-text">I know you're hungry. Fill your cart!</div> 
+                <button onClick={() => closeModal()} className="empty-cart-button">Start Shopping</button>
+            </div>
         )
     } else {
         return (
@@ -21,10 +27,11 @@ const CartModal = (props) => {
                                     <span className="cart-item-info">
                                         {cartItem.item.name} 
                                         <div className="cart-item-price">${(cartItem.item.price * cartItem.quantity).toFixed(2)}</div>
+                                        <button onClick={() => removeCartItem(cartItem.item.id)} className="remove-button">Remove Item</button>
                                     </span>
                                     
                                     <div ><img className="cart-item-img"src="https://oobreats.s3.amazonaws.com/restaurantphotos/popeyes.jpeg" alt="" /></div>
-                                {/* </div> */}
+                                
                             </div>
                         )
                     })}
@@ -40,5 +47,8 @@ const mSTP = (state) => ({
     cart: state.entities.cart
 })
 
-
-export default connect(mSTP, null)(CartModal)
+const mDTP = dispatch => ({
+    removeCartItem: (itemId) => dispatch(removeCartItem(itemId)),
+    closeModal: () => dispatch(closeModal())
+})
+export default connect(mSTP, mDTP)(CartModal)

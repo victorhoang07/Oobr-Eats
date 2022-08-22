@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
-
+import MarkerManager from "../../util/marker_manager";
+import { withRouter } from "react-router-dom";
 const CENTER =  {
         lat: 40.734037,
         lng: -73.966614
-        }
+    }
 
     const mapOptions = {
         center: CENTER,
@@ -27,11 +28,13 @@ class PickupMap extends React.Component {
    
 
     componentDidMount() {
-       
-        // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     }
 
+    handleMarkerClick(bench) {
+        this.props.history.push(`benches/${bench.id}`);
+    }
 
     render() {
         return (
@@ -40,4 +43,4 @@ class PickupMap extends React.Component {
     }
 }
 
-export default PickupMap
+export default withRouter(PickupMap)
