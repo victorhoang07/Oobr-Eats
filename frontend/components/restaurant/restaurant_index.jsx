@@ -11,7 +11,6 @@ const ResaturantIndex = (props) => {
     }, []) 
 
     const history = useHistory()
-
     const restaurantRoute = (id) => {
         let path = `/restaurant/${id}`
         history.push(path)
@@ -24,7 +23,7 @@ const ResaturantIndex = (props) => {
 
     return (        
         <div className="restaurant-index-container">
-            <h2 className="restaurant-index-text">Popular near you </h2>
+            
             <div className="main-filter-container">
                 <div className="main-filter">
                     <p className="filter-text">All Stores</p>
@@ -40,8 +39,10 @@ const ResaturantIndex = (props) => {
             <div className="restaurant-index">
                 <div className="restaurants-container">
                     {Object.values(props.restaurants).map((restaurant) => {
+                        if (restaurant.description.includes(props.filter) || restaurant.pricing_rating === (props.filter)) {
                         return (
                             <div className="restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
+                                <h2 className="restaurant-index-text">{props.filter} </h2>
                                 <img className="restaurant-index-img" src={restaurant.img_url}/>
                                 <div className="restaurant-index-info">
                                     <p className="restaurant-index-name">{restaurant.name}</p>
@@ -49,7 +50,19 @@ const ResaturantIndex = (props) => {
                                 </div>
                                 <div>$0.69 Delivery Fee</div>
                             </div>
-                        )
+                        )} else if (props.filter === undefined) {
+                            return (
+                                <div className="restaurant" key={restaurant.id} onClick={() => restaurantRoute(restaurant.id)}>
+                                    <h2 className="restaurant-index-text">Popular near you </h2>
+                                    <img className="restaurant-index-img" src={restaurant.img_url} />
+                                    <div className="restaurant-index-info">
+                                        <p className="restaurant-index-name">{restaurant.name}</p>
+                                        <div className="restaurant-index-rating">{restaurant.rating}</div>
+                                    </div>
+                                    <div>$0.69 Delivery Fee</div>
+                                </div>
+                            )
+                        }
                     })
                     }
 
@@ -74,7 +87,8 @@ const ResaturantIndex = (props) => {
 
 const mSTP = (state, ownProps) => {
 return({
-    restaurants: state.entities.restaurants
+    restaurants: state.entities.restaurants,
+    filter: state.ui.filter.type
 })}
 
 const mDTP = dispatch => ({
