@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+     font-family: "UMBold";
+     src: url("./fonts/UberMoveBold.otf");
+ }
+ @font-face {
+     font-family: "UMMedium";
+     src: url("./fonts/UberMoveMedium.otf");
+ }
+ @font-face {
+     font-family: "UMTBold";
+     src: url("./fonts/UberMoveTextBold.otf");
+ }
+ @font-face {
+     font-family: "UMTLight";
+     src: url("./fonts/UberMoveTextLight.otf");
+ }
+ @font-face {
+     font-family: "UMTMedium";
+     src: url("./fonts/UberMoveTextMedium.otf");
+ }
+ @font-face {
+     font-family: "UMTRegular";
+     src: url("./fonts/UberMoveTextRegular.otf");
+ }
+
+ ::placeholder{
+     font-family: UMTLight;
+ }

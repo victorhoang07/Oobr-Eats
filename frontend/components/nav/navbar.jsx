@@ -68,9 +68,9 @@ const NavBar = (props) => {
         if (Object.values(props.cart).length === 0){
             cartText = 'Cart'
         } else if (Object.values(props.cart).length === 1) {
-            cartText = `${Object.values(props.cart).length} Item`
+            cartText = `${Object.values(props.cart).length} item`
         } else {
-            cartText = `${Object.values(props.cart).length} Items`
+            cartText = `${Object.values(props.cart).length} items`
         }
 
 

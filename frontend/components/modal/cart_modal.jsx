@@ -1,12 +1,30 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import { removeCartItem } from "../../actions/cart_actions";
 import { closeModal } from "../../actions/modal_actions";
+import { requestRestaurant } from "../../actions/restaurant_actions";
+import { useHistory } from "react-router-dom";
 
 const CartModal = (props) => {
 
-    const {cart, removeCartItem, closeModal} = props
+    const {cart, removeCartItem, closeModal, restaurants} = props
+    // const [restaurantIds, setRestaurant] = useState({})
     
+    // useEffect(() => {
+    //     Object.values(cart).forEach (cartItem => {
+    //         const restaurant = restaurants[cartItem.restaurantId]
+    //         setRestaurant({[cartItem.restaurantId]: restaurant.name})
+    //         console.log(restaurantIds)
+    //     })
+    // }, [])
+    const history = useHistory()
+
+    const handleCheckout = () => {
+        const checkoutPath = "/checkout"
+        history.push(checkoutPath)
+        closeModal()
+    }
+
     if (Object.keys(cart).length === 0) {
         return (
             <div className="empty-cart">
@@ -22,7 +40,7 @@ const CartModal = (props) => {
                     {Object.values(cart).map((cartItem) => {
                         return (
                             <div className="cart-item" key={cartItem.item.id}>
-                                {/* <div className="cart-item-container"> */}
+                             
                                     <button className="item-quantity">{cartItem.quantity}</button>
                                     <span className="cart-item-info">
                                         {cartItem.item.name} 
@@ -36,7 +54,7 @@ const CartModal = (props) => {
                         )
                     })}
                 </div>
-                <button className="checkout-button">Go to checkout</button>
+                <button onClick={() => handleCheckout()} className="checkout-button">Go to checkout</button>
             </div>
         )
     }
@@ -44,11 +62,13 @@ const CartModal = (props) => {
 }
 //consider grabbing restaurant info through reducer and actions
 const mSTP = (state) => ({
-    cart: state.entities.cart
+    cart: state.entities.cart,
+    restaurants: state.entities.restaurants 
 })
 
 const mDTP = dispatch => ({
     removeCartItem: (itemId) => dispatch(removeCartItem(itemId)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    requestRestaurant: (id) => dispatch(requestRestaurant(id))
 })
 export default connect(mSTP, mDTP)(CartModal)
