@@ -1,13 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import NavBar from "../nav/navbar"
 import { connect } from "react-redux";
 import CheckoutMap from "../map/checkout_map"
 import PickupMap from "../map/pickup_map"
 import { openModal } from "../../actions/modal_actions";
 import { Link } from "react-router-dom";
+import { removeCartItems } from "../../actions/cart_actions";
 const Checkout = (props) => {
 
     const {cart} = props
+
+    useEffect(() => {
+        return () => props.removeCartItems()
+    }, [])
 
     return (
         <div className="checkout-component">
@@ -42,7 +47,8 @@ const mSTP = (state) => ({
 })
 
 const mDTP = dispatch => ({
-    openModal: (type) => dispatch(openModal(type))
+    openModal: (type) => dispatch(openModal(type)),
+    removeCartItems: () => dispatch(removeCartItems())
 })
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MarkerManager from "../../util/marker_manager";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
@@ -282,7 +282,6 @@ const mapOptions = {
 class CheckoutMap extends React.Component {
     constructor(props) {
         super(props)
-
         this.map;
     }
 
