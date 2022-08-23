@@ -29,10 +29,10 @@ const MenuItemModal = (props) => {
     const handleAdd = () => {
         if (cart[itemInfo.id]) {
             let cartItem = cart[itemInfo.id]
-            addCartItem((amount + cartItem.quantity), itemInfo)
+            addCartItem((amount + cartItem.quantity), itemInfo, itemInfo.restaurant_id)
             closeModal()
         } else {
-            addCartItem(amount, itemInfo)
+            addCartItem(amount, itemInfo, itemInfo.restaurant_id)
             closeModal()
         }
     }
@@ -71,7 +71,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal()),
-    addCartItem: (quantity, item) => dispatch(addCartItem(quantity, item))
+    addCartItem: (quantity, item, restaurantId) => dispatch(addCartItem(quantity, item, restaurantId))
 })
 
 export default connect(mSTP,mDTP)(MenuItemModal)
