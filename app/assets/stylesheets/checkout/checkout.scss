@@ -1,8 +1,8 @@
-.checkout-component{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
+// .checkout-component{
+//     // height: 100%;
+//     // width: 100%;
+//     // overflow: hidden;
+// }
 .checkout-info-container {
     position: absolute;
     top: 15%;
@@ -12,7 +12,7 @@
     // border: 1px solid black;
     overflow-y: scroll;
     overflow-x: hidden;
-    z-index: 10;
+    z-index: 9;
     background-color: white;
 }
 .checkout-info-container::-webkit-scrollbar {

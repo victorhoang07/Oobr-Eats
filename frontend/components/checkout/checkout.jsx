@@ -3,13 +3,17 @@ import NavBar from "../nav/navbar"
 import { connect } from "react-redux";
 import CheckoutMap from "../map/checkout_map"
 import PickupMap from "../map/pickup_map"
+import { openModal } from "../../actions/modal_actions";
+import { Link } from "react-router-dom";
 const Checkout = (props) => {
 
     const {cart} = props
 
     return (
         <div className="checkout-component">
-            <NavBar />
+            <img className="menu-icon" src={window.menuIcon} onClick={() => props.openModal('main')} />
+            <Link to="/main" className="main-name-Oobr">Oobr <span className="main-name-Eats">Eats</span></Link>
+
             <div className="checkout-map-container"><CheckoutMap /></div>
             <div className="checkout-info-container">
                 <div className="checkout-text">
@@ -36,7 +40,10 @@ const Checkout = (props) => {
 const mSTP = (state) => ({
     cart: state.entities.cart
 })
-    
+
+const mDTP = dispatch => ({
+    openModal: (type) => dispatch(openModal(type))
+})
 
 
-export default connect(mSTP, null)(Checkout)
+export default connect(mSTP, mDTP)(Checkout)
