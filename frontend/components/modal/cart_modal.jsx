@@ -9,7 +9,7 @@ const CartModal = (props) => {
 
     const {cart, removeCartItem, closeModal, restaurants} = props
     // const [restaurantIds, setRestaurant] = useState({})
-    
+    const [total, setTotal] = useState(0)
     // useEffect(() => {
     //     Object.values(cart).forEach (cartItem => {
     //         const restaurant = restaurants[cartItem.restaurantId]
@@ -69,6 +69,6 @@ const mSTP = (state) => ({
 const mDTP = dispatch => ({
     removeCartItem: (itemId) => dispatch(removeCartItem(itemId)),
     closeModal: () => dispatch(closeModal()),
-    requestRestaurant: (id) => dispatch(requestRestaurant(id))
+    // requestRestaurant: (id) => dispatch(requestRestaurant(id))
 })
 export default connect(mSTP, mDTP)(CartModal)

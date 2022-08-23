@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import Loading from "../loading/loading";
 import { requestRestaurants } from "../../actions/restaurant_actions"
 
-
     const CENTER =  {
         lat: 40.734037,
         lng: -73.966614

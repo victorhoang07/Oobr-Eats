@@ -9,7 +9,7 @@ import Modal from "../components/modal/modal"
 import Main from "./main/main";
 import Pickup from "./pickup/pickup";
 import Restaurant from "./restaurant/restaurant";
-
+import Checkout from "./checkout/checkout";
 const App = () => (
 
     <div>
@@ -20,7 +20,7 @@ const App = () => (
         <ProtectedRoute path="/main" component={Main}/>
         <ProtectedRoute exact path="/pickup" component={Pickup} />
         <ProtectedRoute exact path="/restaurant/:restaurantId" component={Restaurant} />
-
+        <ProtectedRoute exact path="/checkout" component={Checkout}/>
 
     </div>
 

@@ -27,6 +27,7 @@ const MenuItemModal = (props) => {
     }
 
     const handleAdd = () => {
+        
         if (cart[itemInfo.id]) {
             let cartItem = cart[itemInfo.id]
             addCartItem((amount + cartItem.quantity), itemInfo, itemInfo.restaurant_id)
@@ -47,7 +48,6 @@ const MenuItemModal = (props) => {
                 <div className="item-modal-name">{itemInfo.name}</div>
                 <div className="item-modal-price">${itemInfo.price}</div>
                 <div className="item-modal-descript">{itemInfo.description}</div>
-
                 <div className="item-button-container">
                     <div className="item-modal-buttons">
                         <button className="item-buttons" onClick={() => handleDecrement()}> - </button>

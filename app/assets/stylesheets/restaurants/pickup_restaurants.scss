@@ -6,6 +6,9 @@
 }
 
 .pickup-restaurants-container {
+    width: 860px;
+    height: 75vh;
+    overflow-y: scroll;
     margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr ;

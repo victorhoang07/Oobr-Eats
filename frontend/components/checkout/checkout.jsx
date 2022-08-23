@@ -1,19 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar from "../nav/navbar"
-
+import { connect } from "react-redux";
+import CheckoutMap from "../map/checkout_map"
+import PickupMap from "../map/pickup_map"
 const Checkout = (props) => {
 
+    const {cart} = props
 
     return (
         <div className="checkout-component">
             <NavBar />
-
+            <div className="checkout-map-container"><CheckoutMap /></div>
+            <div className="checkout-info-container">
+                <div className="checkout-text">
+                    <div>Thank you for ordering with Oobr Eats!</div>
+                    <div className="order-summary">Order summary </div>
+                </div>
+                {Object.values(cart).map((cartItem) => {
+                    return (
+                        <div className="checkout-cart-item" key={cartItem.item.id}>
+                            <button className="checkout-item-quantity">{cartItem.quantity}</button>
+                            <span className="checkout-item-info">
+                                {cartItem.item.name}
+                                <div className="checkout-item-price">${(cartItem.item.price * cartItem.quantity).toFixed(2)}</div>
+                            </span>
+                        </div>
+                    )
+                })}
+                <div className="total"> Total: </div>
+            </div>
         </div>
     )
 }
 
-const mSTP = (state) => {
-    cart = state.entities.cart
-}
+const mSTP = (state) => ({
+    cart: state.entities.cart
+})
+    
 
-export default ConnectionType(mSTP, null)(Checkout)
+
+export default connect(mSTP, null)(Checkout)
