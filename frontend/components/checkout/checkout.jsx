@@ -14,6 +14,11 @@ const Checkout = (props) => {
         return () => props.removeCartItems()
     }, [])
 
+    let total = 0
+    Object.values(cart).forEach((cartItem) => {
+        total += (cartItem.quantity * cartItem.item.price)
+    })
+
     return (
         <div className="checkout-component">
             <img className="menu-icon" src={window.menuIcon} onClick={() => props.openModal('main')} />
@@ -36,7 +41,7 @@ const Checkout = (props) => {
                         </div>
                     )
                 })}
-                <div className="total"> Total: </div>
+                <div className="total"> <span>Total:</span>  <span>${total.toFixed(2)}</span></div>
             </div>
         </div>
     )

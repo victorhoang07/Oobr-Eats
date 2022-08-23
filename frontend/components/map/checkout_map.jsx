@@ -266,7 +266,7 @@ const myStyles = [
 
 const mapOptions = {
     center: CENTER,
-    zoom: 13.5,
+    zoom: 14,
     styles: myStyles,
     streetViewControl: false,
     mapTypeControl: false,
@@ -279,6 +279,12 @@ const mapOptions = {
     mapTypeId: google.maps.MapTypeId.TERRAIN
 };
 
+const aA = {
+    lat: 40.73622171497315,
+    lng: -73.99371275824939,
+    name: "App Academy",
+}
+
 class CheckoutMap extends React.Component {
     constructor(props) {
         super(props)
@@ -287,10 +293,11 @@ class CheckoutMap extends React.Component {
 
 
     componentDidMount() {
+        const restaurant = this.props.restaurants[this.props.restaurantId]
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-        this.MarkerManager.updateMarkers(this.props.restaurants[this.props.restaurantId])
-        // this.MarkerManager.updateMarkers(this.props.restaurants)
+        this.MarkerManager.createOneMarker(restaurant)
+        this.MarkerManager.createAppAcademy(aA)
     }
 
     handleMarkerClick(restaurant) {
@@ -309,7 +316,7 @@ const mSTP = (state) => {
     console.log(cart)
     return ({
     restaurants: state.entities.restaurants,
-    // restaurantId: cart.restaurantId
+    restaurantId: cart.restaurantId
 })}
 
 const mDTP = dispatch => ({

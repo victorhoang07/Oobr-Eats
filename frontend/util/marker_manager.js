@@ -17,6 +17,22 @@ const DARK_CIRCLE = {
   strokeWeight: 0.4
 }
 
+const SMALL_DARK_CIRCLE = {
+  path: google.maps.SymbolPath.CIRCLE,
+  scale: 10,
+  fillColor: "#000000",
+  strokeColor: "#000000",
+  fillOpacity: 1.0,
+  strokeWeight: 0.4
+}
+
+const SQUARE =  {
+    path: 'M -2,-2 2,-2 2,2 -2,2 z', // 'M -2,0 0,-2 2,0 0,2 z',
+    strokeColor: '#000000',
+    fillColor: '#000000',
+    fillOpacity: 1,
+    scale: 4
+  };
 class MarkerManager {
   constructor(map, handleClick){
     this.map = map;
@@ -29,7 +45,33 @@ class MarkerManager {
                 this.createMarkerFromRestaurant(newRestaurant, this.handleClick)
             })
     }
+    createOneMarker(restaurant) {
+        const position = new google.maps.LatLng(restaurant.lat, restaurant.lng);
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            title: restaurant.name,
+            label: {
+                text: `•`,
+                color: "white"
+            },
+            icon: SQUARE,
+        });
+    }
 
+    createAppAcademy(aA) {
+         const position = new google.maps.LatLng(aA.lat, aA.lng);
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            title: aA.name,
+            label: {
+                text: `•`,
+                color: "white"
+            },
+            icon: SMALL_DARK_CIRCLE,
+        });
+    }
     createMarkerFromRestaurant(restaurant) {
         const position = new google.maps.LatLng(restaurant.lat, restaurant.lng);
         const marker = new google.maps.Marker({
