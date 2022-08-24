@@ -6839,3 +6839,667 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 28ms (Views: 9.1ms | ActiveRecord: 15.1ms)
 
 
+Started POST "/api/session" for ::1 at 2022-08-24 17:11:04 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"Demo@user.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Demo@user.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "Demo@user.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (41.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YWQlOmRZq0Jpknf9UWnaFQ"], ["updated_at", "2022-08-24 21:11:04.837908"], ["id", 1]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (4.1ms)
+Completed 200 OK in 325ms (Views: 16.7ms | ActiveRecord: 48.9ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:11:04 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (20.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.5ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.5ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.4ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/index.json.jbuilder (134.3ms)
+Completed 200 OK in 171ms (Views: 134.3ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/api/restaurants/6" for ::1 at 2022-08-24 17:11:15 -0400
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:10
+  Rendering api/restaurants/show.json.jbuilder
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.4ms)
+  [1m[36mMenuItem Load (0.7ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/views/api/restaurants/show.json.jbuilder:4
+  Rendered api/restaurants/show.json.jbuilder (6.5ms)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:12:05 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (7.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.4ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.3ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.3ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.8ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/index.json.jbuilder (49.1ms)
+Completed 200 OK in 56ms (Views: 48.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:12:14 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (30.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.4ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (1.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.3ms)
+  Rendered api/restaurants/index.json.jbuilder (79.8ms)
+Completed 200 OK in 87ms (Views: 56.9ms | ActiveRecord: 30.3ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:12:14 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.6ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.3ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/index.json.jbuilder (125.9ms)
+Completed 200 OK in 133ms (Views: 132.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:12:37 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (7.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.8ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/index.json.jbuilder (56.5ms)
+Completed 200 OK in 64ms (Views: 56.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/restaurants/1" for ::1 at 2022-08-24 17:12:41 -0400
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (7.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:10
+  Rendering api/restaurants/show.json.jbuilder
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.5ms)
+  [1m[36mMenuItem Load (0.9ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/views/api/restaurants/show.json.jbuilder:4
+  Rendered api/restaurants/show.json.jbuilder (4.4ms)
+Completed 200 OK in 20ms (Views: 10.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:12:53 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (4.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.4ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (7.0ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/index.json.jbuilder (143.2ms)
+Completed 200 OK in 155ms (Views: 150.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/restaurants/20" for ::1 at 2022-08-24 17:13:04 -0400
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mRestaurant Load (3.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:10
+  Rendering api/restaurants/show.json.jbuilder
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.3ms)
+  [1m[36mMenuItem Load (0.4ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/views/api/restaurants/show.json.jbuilder:4
+  Rendered api/restaurants/show.json.jbuilder (3.6ms)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-08-24 17:13:09 -0400
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.3ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.9ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.2ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.4ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/_restaurant.json.jbuilder (0.1ms)
+  Rendered api/restaurants/index.json.jbuilder (31.9ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2022-08-24 17:37:30 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YWQlOmRZq0Jpknf9UWnaFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (9.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "Demo@user.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0tBHdhtSnfQ_oplPoilCNw"], ["updated_at", "2022-08-24 21:37:31.031194"], ["id", 1]]
+  ↳ app/models/user.rb:39
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (4.7ms)
+Completed 200 OK in 61ms (Views: 11.9ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:41:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 890ms (Views: 890.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:41:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 211ms (Views: 210.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:42:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 171ms (Views: 170.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:42:47 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:42:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:42:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:42:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:43:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:43:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 73ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:44:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 206ms (Views: 206.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:44:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 113ms (Views: 112.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:44:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:44:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 95ms (Views: 94.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 181ms (Views: 180.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 68ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 52ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 58ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:46:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:47:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:49:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 252ms (Views: 252.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:50:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 160ms (Views: 159.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 209ms (Views: 208.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 72ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 60ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 61ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 139ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 67ms (Views: 66.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 104ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 54ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 112ms (Views: 111.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 60ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:51:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:53:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 129ms (Views: 129.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:53:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:54:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 118ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:54:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 85ms (Views: 85.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:54:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 118ms (Views: 117.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:55:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 96ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:55:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 129ms (Views: 128.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:55:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 120ms (Views: 119.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:56:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 161ms (Views: 161.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:56:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 111ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:56:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 101ms (Views: 101.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:57:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 138ms (Views: 137.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:57:36 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 107ms (Views: 107.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:59:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 462ms (Views: 461.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:59:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 85ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:59:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 434ms (Views: 434.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-08-24 18:01:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 901ms (Views: 900.7ms | ActiveRecord: 0.0ms)
+
+

@@ -22,6 +22,7 @@ const ResaturantIndex = (props) => {
         props.receiveFilter(type)
     }
 
+    
     return (        
         <div className="restaurant-index-container">
             
@@ -85,3 +86,5 @@ const mDTP = dispatch => ({
 })
 
 export default connect(mSTP, mDTP)(ResaturantIndex)
+
+
