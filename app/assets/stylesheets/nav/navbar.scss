@@ -7,7 +7,7 @@
     position: relative;
     font-size: 40px;
     top: 30px;
-    left: 80px;
+    padding-left: 80px;
     text-decoration: none;
     color: black;
 }
@@ -31,8 +31,10 @@
 
 .auth-buttons {
     position: relative;  
-    top: -25px;
+    top: -15px;
     left: 80%;
+    width: 100px;
+    display: inline;
 
 }
 
@@ -173,4 +175,5 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+  z-index: 2;
 }
