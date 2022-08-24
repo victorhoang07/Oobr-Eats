@@ -98,13 +98,68 @@ restaurant6 = Restaurant.create!(
 )
 # https://www.ubereats.com/store/la-pecora-bianca-soho/x44lksXAV5Syad5L9yoV6w?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlVuaW9uJTIwU3F1YXJlJTIwUGFyayUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMjA0YWViY2Y3LTk4NjYtMDlkNy00NTE0LThkMmM4Yzg5YjRjMyUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJ1YmVyX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBNDAuNzM1NDA3JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTczLjk4OTkyMjUlN0Q%3D&ps=1
 
+restaurant7 = Restaurant.create!(
+        name: "Bonchon Chicken",
+        address: "267 W 23rd St",
+        description: "Comfort All Korean Alcohol",
+        lat: 40.74508832357269, 
+        lng: -73.99784281534448,
+        rating: 4.7,
+        pricing_rating: "$$",
+        hours: "11:00 AM - 09:30 PM",
+        review_count: 88,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/pokebowl.jpeg"
+)
+# https://www.ubereats.com/store/bonchon-chicken-267-w-23rd-st/h-8xgYGTTG2YmeTT0EslJQ?diningMode=DELIVERY&ps=1
+
+restaurant8 = Restaurant.create!(
+        name: "Noodle Village",
+        address: "13 Mott St",
+        description: "Comfort All Chinese",
+        lat: 40.71416246346845, 
+        lng: -73.99879730059992,
+        rating: 4.8,
+        pricing_rating: "$",
+        hours: "11:00 AM - 09:30 PM",
+        review_count: 59,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/pokebowl.jpeg"
+)
+# https://www.ubereats.com/store/noodle-village/n4NHDjcaQF2UfPZkIMa1iA?diningMode=DELIVERY&ps=1
+
+restaurant9 = Restaurant.create!(
+        name: "The Palm",
+        address: "206 West St",
+        description: "Comfort All",
+        lat: 40.71660483596841,
+        lng: -74.01277096358945,
+        rating: 5.0,
+        pricing_rating: "$$$$",
+        hours: "12:00 PM - 11:30 PM",
+        review_count: 25,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/pokebowl.jpeg"
+)
+# https://www.ubereats.com/store/the-palm-206-west-st/KoB_2KV0T4q4ybJhX7I5pw?diningMode=DELIVERY&mod=storeInfo&modctx=%257B%2522storeSlug%2522%253A%2522the-palm-206-west-st%2522%252C%2522storeUuid%2522%253A%25222a807fd8-a574-4f8a-b8c9-b2615fb239a7%2522%252C%2522sectionUuid%2522%253A%2522%2522%257D&ps=1
+
+restaurant10 = Restaurant.create!(
+        name: "Grimaldi's Pizza",
+        address: "656 6th Ave",
+        description: "Comfort All Pizza Italian American Alcohol",
+        lat: 40.74095786143645, 
+        lng: -73.99374807750006,
+        rating: 4.4,
+        pricing_rating: "$$",
+        hours: "11:00 AM - 5:00 AM",
+        review_count: 361,
+        img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/pokebowl.jpeg"
+)
+# https://www.ubereats.com/store/grimaldis-pizza/qA9TFuliTgSaoXTDXXwqpg?diningMode=DELIVERY&mod=storeInfo&modctx=%257B%2522storeSlug%2522%253A%2522grimaldis-pizza%2522%252C%2522storeUuid%2522%253A%2522a80f5316-e962-4e04-9aa1-74c35d7c2aa6%2522%252C%2522sectionUuid%2522%253A%2522%2522%257D&ps=1
+
 menu2_item1 = MenuItem.create!(
         name: "8PC Nuggets A La Cart",
         price: 7.78,
         restaurant_id: 2,
         img_url: "https://oobreats.s3.amazonaws.com/restaurantphotos/popeyesmenu/8pcalacarte.webp"
 )
-
 menu2_item2 = MenuItem.create!(
         name: "Handcrafted Tender Combo (5 Pcs)",
         price: 15.58,
