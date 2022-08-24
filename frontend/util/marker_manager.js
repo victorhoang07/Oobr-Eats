@@ -79,7 +79,7 @@ class MarkerManager {
             map: this.map,
             title: restaurant.name,
             label: {
-                text: `${restaurant.rating}`,
+                text: `${restaurant.rating.toFixed(1)}`,
                 color: "black"
             },
             icon: LIGHT_CIRCLE,

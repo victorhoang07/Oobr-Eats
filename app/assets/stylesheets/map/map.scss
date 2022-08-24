@@ -13,8 +13,10 @@
 }
 
 .marker-img {
-    width: 199px;
-    height: auto;
+    width: 220px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .marker-info-container {
@@ -35,4 +37,9 @@
     background-color: rgb(238,238,238);
     border-radius: 50%;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
 }

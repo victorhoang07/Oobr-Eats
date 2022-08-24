@@ -23,9 +23,9 @@ const Restaurant = (props) => {
                 </div>
                 <div className="restaurant-info-container">
                     <div className="restaurant-info-subcontainer">
-                        <div className="restaurant-title">{restaurant.name}</div>
+                        <div className="restaurant-title">{restaurant.name} &#40;{restaurant.address}&#41;</div>
                         <div className="restaurant-info"><BsFillStarFill className="star"/> 
-                            <span>{restaurant.rating} </span> 
+                            <span>{restaurant.rating.toFixed(1)} </span> 
                             &#40; {restaurant.review_count} ratings &#41;
                             <span className="dot"> • </span>  
                             {restaurant.description.split(" ")[0]}
