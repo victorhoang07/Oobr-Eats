@@ -22,15 +22,6 @@ const MenuItemIndex = (props) => {
                         </div>
                     )
                 })}
-
-                <div className="menu-item">1</div>
-                <div className="menu-item">2</div>
-                <div className="menu-item">3</div>
-                <div className="menu-item">4</div>
-                <div className="menu-item">1</div>
-                <div className="menu-item">2</div>
-                <div className="menu-item">3</div>
-                <div className="menu-item">4</div>
             </div>
         </div>
     )

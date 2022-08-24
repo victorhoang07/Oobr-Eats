@@ -11,10 +11,10 @@ class Api::RestaurantsController < ApplicationController
         render :show
     end
 
-    def create
-        @restaurant = Restaurant.create!(restaurant_params)
-        render :show
-    end
+    # def create
+    #     @restaurant = Restaurant.create!(restaurant_params)
+    #     render :show
+    # end
 
     private
 

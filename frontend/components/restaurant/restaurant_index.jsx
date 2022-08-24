@@ -47,7 +47,7 @@ const ResaturantIndex = (props) => {
                                 <img className="restaurant-index-img" src={restaurant.img_url}/>
                                 <div className="restaurant-index-info">
                                     <p className="restaurant-index-name">{restaurant.name}</p>
-                                    <div className="restaurant-index-rating">{restaurant.rating}</div>
+                                    <div className="restaurant-index-rating">{restaurant.rating.toFixed(1)}</div>
                                 </div>
                                 <div>$0.69 Delivery Fee</div>
                             </div>
@@ -58,7 +58,7 @@ const ResaturantIndex = (props) => {
                                     <img className="restaurant-index-img" src={restaurant.img_url} />
                                     <div className="restaurant-index-info">
                                         <p className="restaurant-index-name">{restaurant.name}</p>
-                                        <div className="restaurant-index-rating">{restaurant.rating}</div>
+                                        <div className="restaurant-index-rating">{restaurant.rating.toFixed(1)}</div>
                                     </div>
                                     <div>$0.69 Delivery Fee</div>
                                 </div>
@@ -66,20 +66,6 @@ const ResaturantIndex = (props) => {
                         }
                     })
                     }
-
-                    <div className="restaurant">1</div>
-                    <div className="restaurant">2</div>
-                    <div className="restaurant">3</div>
-                    <div className="restaurant">4</div>
-                    <div className="restaurant">1</div>
-                    <div className="restaurant">2</div>
-                    <div className="restaurant">3</div>
-                    <div className="restaurant">4</div>
-                    <div className="restaurant">1</div>
-                    <div className="restaurant">2</div>
-                    <div className="restaurant">3</div>
-                    <div className="restaurant">4</div>
-
                 </div>
             </div>
         </div>
