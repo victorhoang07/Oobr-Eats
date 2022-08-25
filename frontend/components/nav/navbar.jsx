@@ -60,9 +60,9 @@ const NavBar = (props) => {
                 )
         }
         
-        useEffect(() => {
-            search.current.focus();
-        }, []);
+        // useEffect(() => {
+        //     search.current.focus();
+        // }, []);
 
         let cartText;
         if (Object.values(props.cart).length === 0){
@@ -87,11 +87,12 @@ const NavBar = (props) => {
 
                 <div className="search-container"> 
                     <FiSearch className="search-icon"/>
-                    <input ref={search} className="search" onClick={() => props.openModal('search')} type="text" placeholder="What are you craving?"/>
+                    <input  className="search"  type="text" placeholder="What are you craving?"/>
+                        {/* ref={search}  onClick={() => props.openModal('search')} */}
                 </div>
 
                 <button onClick={() => props.openModal('cart')} className="cart-button"><BsCart2 className="cart-icon"/>{cartText}</button>
-
+                
             </div>
         )
     }
