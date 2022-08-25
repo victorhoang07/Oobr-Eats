@@ -38,7 +38,6 @@ const SplashPage = () => {
             <div className="splash-img-box">
                 <img className="splash-img" src="https://oobreats.s3.amazonaws.com/splash6.webp" alt="" />
             </div>
-            <footer>helloworld</footer>
         </div>
     )
 }

@@ -30,17 +30,19 @@ const Checkout = (props) => {
                     <div>Thank you for ordering with Oobr Eats!</div>
                     <div className="order-summary">Order summary </div>
                 </div>
-                {Object.values(cart).map((cartItem) => {
-                    return (
-                        <div className="checkout-cart-item" key={cartItem.item.id}>
-                            <button className="checkout-item-quantity">{cartItem.quantity}</button>
-                            <span className="checkout-item-info">
-                                {cartItem.item.name}
-                                <div className="checkout-item-price">${(cartItem.item.price * cartItem.quantity).toFixed(2)}</div>
-                            </span>
-                        </div>
-                    )
-                })}
+                <div className="checkout-items-container">
+                    {Object.values(cart).map((cartItem) => {
+                        return (
+                            <div className="checkout-cart-item" key={cartItem.item.id}>
+                                <button className="checkout-item-quantity">{cartItem.quantity}</button>
+                                <span className="checkout-item-info">
+                                    {cartItem.item.name}
+                                    <div className="checkout-item-price">${(cartItem.item.price * cartItem.quantity).toFixed(2)}</div>
+                                </span>
+                            </div>
+                        )
+                    })}
+                </div>
                 <div className="total"> <span>Total:</span>  <span>${total.toFixed(2)}</span></div>
             </div>
         </div>

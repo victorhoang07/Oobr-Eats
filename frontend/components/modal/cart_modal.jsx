@@ -8,15 +8,6 @@ import { useHistory } from "react-router-dom";
 const CartModal = (props) => {
 
     const {cart, removeCartItem, closeModal, restaurants} = props
-    // const [restaurantIds, setRestaurant] = useState({})
-    // const [total, setTotal] = useState(0)
-    // useEffect(() => {
-    //     Object.values(cart).forEach (cartItem => {
-    //         const restaurant = restaurants[cartItem.restaurantId]
-    //         setRestaurant({[cartItem.restaurantId]: restaurant.name})
-    //         console.log(restaurantIds)
-    //     })
-    // }, [])
     const history = useHistory()
 
     const handleCheckout = () => {

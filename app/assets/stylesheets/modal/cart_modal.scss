@@ -37,7 +37,10 @@
 
 .cart-container {
   // border: 1px solid black;
-  height: 100vh;
+  height: 80vh;
+  width: 35vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
 }
 
