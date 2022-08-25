@@ -5,17 +5,19 @@
 
 .main-name {
     position: relative;
-    font-size: 40px;
+    font-size: 35px;
     top: 30px;
     padding-left: 80px;
     text-decoration: none;
     color: black;
     font-family: UMMedium;
 }
-
+.eats{
+  font-family: Galano;
+}
 .main-name-Oobr {
     position: relative;
-    font-size: 40px;
+    font-size: 35px;
     top: 30px;
     left: 75px;
     text-decoration: none;
@@ -26,9 +28,10 @@
 
 .main-name-Eats {
     position: relative;
-    font-size: 40px;
+    font-size: 35px;
     text-decoration: none;
     color: black;
+    font-family: Galano;
 }
 
 .auth-buttons {
@@ -176,7 +179,7 @@
 .menu-icon {
   position: absolute;
   left: 30px;
-  top: 35px;
+  top: 33px;
   width: 30px;
   height: 30px;
   cursor: pointer;

@@ -31,7 +31,7 @@ const NavBar = (props) => {
             <div className="auth-navbar-container">
                 
                 <img className="menu-icon" src={window.menuIcon} onClick={() => props.openModal('login')}/>
-                <h2 className="main-name">Oobr Eats</h2>
+                <h2 className="main-name">Oobr <span className="eats">Eats</span> </h2>
                 <div className="auth-buttons">
                     <button className="login-button" onClick={loginRoute}>Log in</button>
                     <button className="signup-button" onClick={signupRoute}>Sign Up</button>
@@ -44,7 +44,7 @@ const NavBar = (props) => {
     const MainNav = () => {
         let method;
 
-        if (window.location.href !== 'http://localhost:3000/#/pickup') {
+        if (window.location.href !== 'https://oobr-eats.herokuapp.com/#/pickup') {
             method = (
                 <div className="food-method">
                     <span className="method"><Link className="toggle" to="/main">Delivery</Link></span>

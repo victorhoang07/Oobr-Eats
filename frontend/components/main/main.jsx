@@ -50,9 +50,9 @@ const SLIDER = {
     },
 
     5: {
-        text: '',
-        img: '',
-        path: ''
+        text: 'My Favorite',
+        img: 'https://oobreats.s3.amazonaws.com/luffyeating.gif',
+        path: '#/restaurant/7'
     },
 }
 
