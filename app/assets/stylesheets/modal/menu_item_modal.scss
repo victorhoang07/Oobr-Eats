@@ -40,12 +40,14 @@
 .item-modal-name {
     font-size: 35px;
     margin-left: 30px;
+    font-family: UMBold;
 }
 
 .item-modal-price {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 30px;
     margin-top: 5px;
+    font-family: UMMedium;
 }
 
 .item-button-container{
@@ -89,7 +91,7 @@
     color: white;
     border: none;
     bottom: 0px;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
 }
 

@@ -64,7 +64,7 @@
 
 .food-method {
   display: flex;
-  margin-left: 35vh;
+  margin-left: 18vw;
   margin-top: -10px;
   background-color: rgb(238,238,238);
   width: 175px;
@@ -73,12 +73,13 @@
   border-radius: 50px;
   // align-items: center;
   justify-content: center;
+  font-family: UMTMedium;
 }
 
 .toggle {
   position: relative;
   display: inline;
-  font-size: 17px;
+  font-size: 15px;
   padding: 20px;
   text-decoration: none;
   color: black;
@@ -99,20 +100,22 @@
 .delivery-address {
   display: flex;
   position: relative;
-  margin-left: 65vh;
+  margin-left: 34vw;
   margin-top: -45px;
   background-color: rgb(238,238,238);
-  width: 140px;
+  width: 150px;
   height: 15px;
   padding: 15px;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
+  font-size: 15px;
+  font-family: UMTMedium;
 }
 
 .search-container {
   position: absolute;
-  left: 90vh;
+  left: 48vw;
   margin-top: -45px;
   border: none;
   background-color: rgb(238,238,238);

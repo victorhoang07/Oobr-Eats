@@ -266,7 +266,7 @@ const myStyles = [
 
 const mapOptions = {
     center: CENTER,
-    zoom: 14,
+    zoom: 13,
     styles: myStyles,
     streetViewControl: false,
     mapTypeControl: false,

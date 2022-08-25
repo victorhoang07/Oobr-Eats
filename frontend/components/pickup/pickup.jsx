@@ -38,19 +38,6 @@ const Pickup = (props) => {
                     })
                     }
 
-                    <div className="restaurant">1</div>
-                    <div className="restaurant">2</div>
-                    <div className="restaurant">3</div>
-                    <div className="restaurant">4</div>
-                    <div className="restaurant">1</div>
-                    <div className="restaurant">2</div>
-                    <div className="restaurant">3</div>
-                    <div className="restaurant">4</div>
-                    <div className="restaurant">1</div>
-                    <div className="restaurant">2</div>
-                    <div className="restaurant">3</div>
-                    <div className="restaurant">4</div>
-
                 </div>
             </div>
 

@@ -22,7 +22,7 @@ const ResaturantIndex = (props) => {
         props.receiveFilter(type)
     }
 
-    
+
     return (        
         <div className="restaurant-index-container">
             
@@ -50,7 +50,7 @@ const ResaturantIndex = (props) => {
                                     <p className="restaurant-index-name">{restaurant.name}</p>
                                     <div className="restaurant-index-rating">{restaurant.rating.toFixed(1)}</div>
                                 </div>
-                                <div>$0.69 Delivery Fee</div>
+                                <div className="delivery-fee">$0.69 Delivery Fee</div>
                             </div>
                         )} else if (props.filter === undefined || props.filter === null) {
                             return (
@@ -61,7 +61,7 @@ const ResaturantIndex = (props) => {
                                         <p className="restaurant-index-name">{restaurant.name}</p>
                                         <div className="restaurant-index-rating">{restaurant.rating.toFixed(1)}</div>
                                     </div>
-                                    <div>$0.69 Delivery Fee</div>
+                                    <div className="delivery-fee">$0.69 Delivery Fee</div>
                                 </div>
                             )
                         }

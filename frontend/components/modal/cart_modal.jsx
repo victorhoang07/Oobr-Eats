@@ -9,7 +9,7 @@ const CartModal = (props) => {
 
     const {cart, removeCartItem, closeModal, restaurants} = props
     // const [restaurantIds, setRestaurant] = useState({})
-    const [total, setTotal] = useState(0)
+    // const [total, setTotal] = useState(0)
     // useEffect(() => {
     //     Object.values(cart).forEach (cartItem => {
     //         const restaurant = restaurants[cartItem.restaurantId]
@@ -25,6 +25,11 @@ const CartModal = (props) => {
         closeModal()
     }
 
+    let total = 0
+    Object.values(cart).forEach((cartItem) => {
+        total += (cartItem.quantity * cartItem.item.price)
+    })
+
     if (Object.keys(cart).length === 0) {
         return (
             <div className="empty-cart">
@@ -37,6 +42,7 @@ const CartModal = (props) => {
         return (
             <div className="cart-modal">
                 <div className="cart-container">
+                    <div className="cart-modal-text">Your Cart:</div>
                     {Object.values(cart).map((cartItem) => {
                         return (
                             <div className="cart-item" key={cartItem.item.id}>
@@ -54,7 +60,7 @@ const CartModal = (props) => {
                         )
                     })}
                 </div>
-                <button onClick={() => handleCheckout()} className="checkout-button">Go to checkout</button>
+                <button onClick={() => handleCheckout()} className="checkout-button">Go to checkout • ${total.toFixed(2)}</button>
             </div>
         )
     }
