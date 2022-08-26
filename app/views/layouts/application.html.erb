@@ -12,7 +12,9 @@
       window.menuIcon = "<%= image_url('menu_icon.png') %>"
       window.profile = "<%= image_url('profile.jpeg') %>"
       window.empty_cart = " <%= image_url('empty_cart.svg') %>"
+     
     </script>
+    <link rel="icon" type="image/png" href="<%= image_url('favicon2.png') %>">
     
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
