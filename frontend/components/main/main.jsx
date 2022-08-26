@@ -84,9 +84,7 @@ const Main = (props) => {
                     return (
                         <button onClick={() => handleFilterClick(category)} key={i} className="category-button">
                             <img className="category-icon" src={CATEGORIES[category]}/>
-                            <div className="category-text">
-                                {category}
-                            </div>
+                            <div className="category-text">{category}</div>
                         </button>
                     )
                 })}

@@ -1,25 +1,26 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { requestRestaurants } from "../../actions/restaurant_actions"
+import { requestRestaurants } from "../../actions/restaurant_actions";
 import { useHistory } from "react-router-dom";
 import { receiveFilter, removeFilter } from "../../actions/filter_actions";
 
 const ResaturantIndex = (props) => {
 
     useEffect(() => {
-        props.removeFilter()
-        props.requestRestaurants()
+        props.removeFilter();
+        props.requestRestaurants();
     }, []) 
 
-    const history = useHistory()
+    const history = useHistory();
+
     const restaurantRoute = (id) => {
-        let path = `/restaurant/${id}`
-        history.push(path)
+        let path = `/restaurant/${id}`;
+        history.push(path);
     }
 
     const handleFilterClick = (type) => {
-        props.removeFilter()
-        props.receiveFilter(type)
+        props.removeFilter();
+        props.receiveFilter(type);
     }
 
 
@@ -65,8 +66,7 @@ const ResaturantIndex = (props) => {
                                 </div>
                             )
                         }
-                    })
-                    }
+                    })}
                 </div>
             </div>
         </div>
