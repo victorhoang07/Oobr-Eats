@@ -44,7 +44,7 @@ const NavBar = (props) => {
     const MainNav = () => {
         let method;
 
-        if (window.location.href !== 'https://oobr-eats.herokuapp.com/#/pickup' || window.location.href !== 'http://oobr-eats.herokuapp.com/#/pickup') {
+        if (window.location.href !== 'https://oobr-eats.herokuapp.com/#/pickup' && window.location.href !== 'http://oobr-eats.herokuapp.com/#/pickup') {
             method = (
                 <div className="food-method">
                     <span className="method"><Link className="toggle" to="/main">Delivery</Link></span>
