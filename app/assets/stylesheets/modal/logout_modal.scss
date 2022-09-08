@@ -33,6 +33,13 @@
     height: 30px;
     width: 30px;
 }
+.angellist-icon {
+    position: absolute;
+    top: 247px;
+    left: 35px;
+    height: 30px;
+    width: 30px;
+}
 
 .github-logout-modal {
     margin-left: 80px;
@@ -51,7 +58,19 @@
     text-decoration: none;
 }
 
+.angellist-logout-modal > a{
+    color: black;
+    text-decoration: none;
+}
+
 .linkedin-logout-modal {
+    margin-left: 80px;
+    margin-top: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.angellist-logout-modal {
     margin-left: 80px;
     margin-top: 50px;
     font-size: 20px;

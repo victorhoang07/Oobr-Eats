@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { BsGithub } from "react-icons/bs"
 import { AiFillLinkedin } from "react-icons/ai"
+import { FaAngellist } from "react-icons/fa"
 const LogoutModal = (props) => {
 
 
@@ -21,7 +22,8 @@ const LogoutModal = (props) => {
                 <div className="github-logout-modal"><a href="https://github.com/victorhoang07" target="_blank">Github</a></div>
             <AiFillLinkedin className="linkedin-icon"/>
                 <div className="linkedin-logout-modal"><a href="https://www.linkedin.com/in/victorhoang07/" target="_blank">Linkedin</a></div>
-
+            <FaAngellist className="angellist-icon" />
+                <div className="angellist-logout-modal"><a href="https://angel.co/u/victor-hoang-07" target="_blank">AngelList</a></div>
             <button className="logout-button" onClick={handleLogout}>Sign out</button>
             </div>
         </div>
