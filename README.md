@@ -77,7 +77,6 @@ Once Users have finalized their cart, they can checkout and process their transa
 
 
 
-
 ## Technologies
 
 **Frontend:** React and Redux
