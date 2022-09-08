@@ -33,6 +33,7 @@ const CartModal = (props) => {
         return (
             <div className="cart-modal">
                 <div className="cart-container">
+                    <button onClick={() => closeModal()} className="exit-cart">X</button>
                     <div className="cart-modal-text">Your Cart:</div>
                     {Object.values(cart).map((cartItem) => {
                         return (

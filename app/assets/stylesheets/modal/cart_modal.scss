@@ -7,6 +7,20 @@
   overflow-y: scroll;
 }
 
+.exit-cart {
+  position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    border-radius: 50%;
+    // height: 60px;
+    // width: 60px;
+    background-color: white;
+    font-size: 25px;
+    color: wh;
+    cursor: pointer;
+}
+
 .empty-cart{
   display: flex;
   position: relative;
@@ -44,7 +58,7 @@
 
 .cart-modal-text{
   position: relative;
-  top: 40px;
+  top: 60px;
   left: 25px;
   font-size: 30px;
   font-family: UMBold;
