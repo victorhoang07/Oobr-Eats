@@ -1,8 +1,8 @@
 class Api::ReviewsController < ApplicationController
 
     def create
-        @review = Review.create!(reviews_params)
-        if @review.save
+        @review = Review.new(reviews_params)
+        if @review.save!
             render json: @review
         else
             render json: @review.errors.full_messages, status: 422
@@ -12,6 +12,6 @@ class Api::ReviewsController < ApplicationController
     private
 
      def reviews_params
-        params.require(:review).permit(:name,:body)
+        params.require(:review).permit(:name,:body, :restaurant_id)
   end    
 end

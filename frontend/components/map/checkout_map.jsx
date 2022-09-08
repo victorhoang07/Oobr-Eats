@@ -313,7 +313,6 @@ class CheckoutMap extends React.Component {
 
 const mSTP = (state) => {
     const cart = Object.values(state.entities.cart)[0]
-    console.log(cart)
     return ({
     restaurants: state.entities.restaurants,
     restaurantId: cart.restaurantId

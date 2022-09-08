@@ -1,4 +1,4 @@
-export default createReview = (review) => (
+export const createReview = (review) => (
   $.ajax({
     method: 'POST',
     url: `/api/reviews`,

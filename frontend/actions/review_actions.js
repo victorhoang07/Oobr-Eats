@@ -1,5 +1,6 @@
 import {createReview} from "../util/review_api_util"
 
+
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW"
 
 export const receiveReview = (review) => ({
@@ -7,8 +8,8 @@ export const receiveReview = (review) => ({
     review
 })
 
-export const createReview = review => dispatch => (
-    createReview(review).then(review => (
-        dispatch(receiveReview(review))
+export const saveReview = review => dispatch => (
+    createReview(review).then(result => (
+        dispatch(receiveReview(result))
     ))
 )

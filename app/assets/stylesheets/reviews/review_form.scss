@@ -1,0 +1,54 @@
+.review-form-container {
+    border-top: 1px solid rgb(214, 214, 214);
+    margin-top: 20px;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+.review-form-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: "UMBold";
+}
+
+.review-form-name {
+    border: 2px solid rgb(214, 214, 214);
+    outline: none;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 300px;
+    font-size: 17px;
+    font-family: "UMTMedium";
+}
+
+.review-form-body {
+    font-family: "UMTMedium";
+    border: 2px solid rgb(214, 214, 214);
+    outline: none;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 90%;
+    resize: none;
+    font-size: 15px;
+}
+
+.review-errors {
+    font-family: UMTLight;
+}
+
+.review-submit {
+    font-family: UMTLight;
+}
+
+.review-button {
+    margin-top: 10px;
+    background-color: black;
+    border: none;
+    padding: 20px;
+    font-family: "UMTMedium";
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}

@@ -289,7 +289,6 @@ class PickupMap extends React.Component {
     
     componentDidMount() {
         let markers;
-        console.log(markers)
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
         this.props.requestRestaurants().then(result => this.MarkerManager.updateMarkers(result.restaurants) )
