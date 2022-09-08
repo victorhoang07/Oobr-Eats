@@ -8,3 +8,10 @@ json.set! :menu do
     end
 end
 
+json.set! :reviews do
+    @restaurant.reviews.each do |review|
+        json.set! review.id do 
+            json.extract! review, :name, :restaurant_id, :body, :created_at
+        end
+    end
+end
