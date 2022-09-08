@@ -5,6 +5,9 @@ import NavBar from "../nav/navbar";
 import Loading from "../loading/loading"
 import { BsFillStarFill } from "react-icons/bs"
 import MenuItemIndex from "../menu_item/menu_item_index"
+import Review from "../review/review";
+
+
 const Restaurant = (props) => {
     
     const {restaurant} = props
@@ -36,7 +39,7 @@ const Restaurant = (props) => {
                     </div>
                 </div> 
                 <MenuItemIndex restaurant={restaurant} />
-                
+                <Review restaurant={restaurant} />
             </div>
         )
     }

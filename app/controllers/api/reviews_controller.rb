@@ -12,6 +12,6 @@ class Api::ReviewsController < ApplicationController
     private
 
      def reviews_params
-        params.require(:restaurant).permit(:name,:body)
+        params.require(:review).permit(:name,:body)
   end    
 end
