@@ -87,7 +87,7 @@ const NavBar = (props) => {
 
                 <div className="search-container"> 
                     <FiSearch className="search-icon"/>
-                    <input  className="search"  type="text" placeholder="What are you craving?"/>
+                    <input  className="search"  type="text" placeholder="Search Coming Soon..."/>
                         {/* ref={search}  onClick={() => props.openModal('search')} */}
                 </div>
 
